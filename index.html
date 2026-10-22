@@ -314,6 +314,19 @@ body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
   .ventana .acciones { justify-content: center; }
 }
 .ventana-titulo { text-wrap: wrap; } .sin-corte { white-space: nowrap; }
+.clave { display: flex; flex-direction: column; gap: 6px; }
+.clave p { margin: 0; }
+.clave-norma { margin-top: auto !important; padding-top: 8px; border-top: 1px dashed var(--borde); font-size: .84rem; line-height: 1.4; color: var(--suave); }
+.clave-norma-etq { display: block; font-weight: 900; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--morado); }
+.clave-norma a { font-weight: 700; white-space: nowrap; }
+/* Tarjetas de Inicio: todo arriba y justificado */
+.claves { align-items: stretch; }
+.clave { display: block; }
+.clave > p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.clave > p + p { margin-top: 8px; }
+.clave-norma { margin-top: 10px !important; padding-top: 8px; font-style: normal; }
+.clave-norma-etq { margin-bottom: 2px; }
+.clave-norma-ref { display: block; margin-top: 4px; font-weight: 700; color: var(--titulo); text-align: left; }
 
 /* Versión de consulta: márgenes seguros en teléfonos y avisos propios */
 main, .franja-int, .pie .int { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -328,7 +341,7 @@ html, body { background: #fff; color: var(--texto); }
 </head>
 <body>
 <a class="salto" href="#contenido">Saltar al contenido</a>
-<div class="aviso-consulta" role="note"><div class="int"><strong>Versión de consulta sin servidor</strong> (datos copiados el 20 de octubre de 2026). Consejos, calculadoras, guía y carta de reclamo funcionan; las denuncias enviadas aquí no se guardan.</div></div>
+<div class="aviso-consulta" role="note"><div class="int"><strong>Versión de consulta sin servidor</strong> (datos copiados el 21 de octubre de 2026). Consejos, calculadoras, guía y carta de reclamo funcionan; las denuncias enviadas aquí no se guardan.</div></div>
 
 <!-- ============ Ventana de bienvenida ============ -->
 <div id="bienvenida" class="velo" role="dialog" aria-modal="true" aria-labelledby="bv-titulo" hidden>
@@ -409,12 +422,12 @@ html, body { background: #fff; color: var(--texto); }
 
   <h2>Lo que tiene que saber</h2>
   <div class="claves">
-    <div class="clave"><p class="clave-num">110 %</p><p>Solo le cobran de más por lo que pase del <strong>110 % de su meta</strong>. No es un recargo sobre todo el recibo.</p></div>
-    <div class="clave"><p class="clave-num">No corte</p><p>Si no paga ese cobro adicional, <strong>no le pueden cortar la luz</strong> por eso.</p></div>
-    <div class="clave"><p class="clave-num">1.ª factura</p><p>El primer recibo del programa era <strong>solo informativo</strong>. Si se lo cobraron, reclame.</p></div>
-    <div class="clave"><p class="clave-num">Exclusión</p><p>Si en su casa alguien depende de un <strong>equipo médico eléctrico</strong>, puede pedir que lo saquen del programa.</p></div>
+    <div class="clave"><p class="clave-num">110 %</p><p>Solo le cobran de más por lo que pase del <strong>110 % de su meta</strong>. No es un recargo sobre todo el recibo.</p><p class="clave-norma"><span class="clave-norma-etq">Dónde lo dice la norma</span>«El consumo facturado del ciclo que supere la meta individual del ciclo de lectura, pero no exceda el ciento diez por ciento (110%) de la misma no generará cobro adicional.» <span class="clave-norma-ref">Res. CREG 101 120 de 2026, artículo 10.</span></p></div>
+    <div class="clave"><p class="clave-num">No corte</p><p>Si no paga ese cobro adicional, <strong>no le pueden cortar la luz</strong> por eso.</p><p class="clave-norma"><span class="clave-norma-etq">Dónde lo dice la norma</span>«El no pago del cobro adicional no dará lugar a la suspensión del servicio público domiciliario de energía eléctrica.» <span class="clave-norma-ref">Res. CREG 101 120 de 2026, artículo 20, numeral i).</span></p></div>
+    <div class="clave"><p class="clave-num">1.ª factura</p><p>El primer recibo del programa era <strong>solo informativo</strong>. Si se lo cobraron, reclame.</p><p class="clave-norma"><span class="clave-norma-etq">Dónde lo dice la norma</span>«Si en este primer ciclo pedagógico resulta un valor de cobro adicional para el usuario por consumo excedente frente a su meta individual, tal cobro tendrá únicamente fines informativos y no constituirá un saldo a pagar por el usuario.» <span class="clave-norma-ref">Res. CREG 101 126 de 2026, artículo 5, inciso 2.</span></p></div>
+    <div class="clave"><p class="clave-num">Exclusión</p><p>Si en su casa alguien depende de un <strong>equipo médico eléctrico</strong>, puede pedir que lo saquen del programa.</p><p class="clave-norma"><span class="clave-norma-etq">Dónde lo dice la norma</span>«Los usuarios que acrediten una condición médica que requiera el uso permanente o intensivo de equipos eléctricos indispensables para la preservación de la vida o la salud podrán solicitar no ser incluidos en el programa ante el comercializador, aportando el soporte médico que acredite tal condición y la fecha desde la cual se presenta.» <span class="clave-norma-ref">Res. CREG 101 120 de 2026, artículo 4, parágrafo 1.</span></p></div>
   </div>
-  <p class="nota">Fuente: Resoluciones CREG 101 120 y 101 126 de 2026 y Circular CREG 348 de 2026. <button type="button" class="enlace-boton" id="ver-bienvenida">Ver de nuevo el mensaje de bienvenida</button></p>
+  <p class="nota">Textos tomados del Gestor Normativo de la CREG, consultado el 21 de octubre de 2026. <button type="button" class="enlace-boton" id="ver-bienvenida">Ver de nuevo el mensaje de bienvenida</button></p>
 </section>
 
 <!-- =============== AHORRAR =============== -->
@@ -507,6 +520,7 @@ html, body { background: #fff; color: var(--texto); }
 <section id="v-calculadoras" class="vista" data-vista="calculadoras" hidden>
   <h2>¿Me están cobrando de más?</h2>
   <p>Busque en su recibo la <strong>meta de consumo</strong>, los <strong>días facturados</strong> y el <strong>consumo en kWh</strong>. Con eso le decimos si le toca cobro adicional del Plan Energía YA.</p>
+  <div class="aviso"><p><strong>¿No encuentra su meta?</strong> En Barrancabermeja, ESSA no la imprime en el recibo: hay que escanear el código QR «¿Cumpliste tu meta de ahorro?». Si está en el programa, la empresa debe informarle su meta, su consumo frente a la meta y el cobro, en el recibo o por otro canal (Res. CREG 101 120, <a href="https://gestornormativo.creg.gov.co/gestor/entorno/docs/originales/Resoluci%C3%B3n_CREG_101_120_2026/index.htm" target="_blank" rel="noopener">art. 19</a>). Si le dicen que su cuenta «no participa», pregunte por qué: solo se excluye por las causales de la norma (<a href="https://gestornormativo.creg.gov.co/gestor/entorno/docs/originales/Resoluci%C3%B3n_CREG_101_120_2026/index.htm" target="_blank" rel="noopener">Res. 101 120, art. 4</a>) o por la exclusión del sismo (<a href="https://gestornormativo.creg.gov.co/gestor/entorno/docs/originales/Resoluci%C3%B3n_CREG_101_126_2026/index.htm" target="_blank" rel="noopener">Res. 101 126, art. 3</a>). <a href="#reclamar">Pídalo con la carta de reclamo</a> y <a href="#reportar">cuéntenoslo</a>.</p></div>
   <form id="form-banda" class="fila-2" novalidate>
     <div class="campo"><label for="b-meta">Meta diaria (kWh por día)</label><input id="b-meta" type="text" inputmode="decimal" required placeholder="Ej.: 6"></div>
     <div class="campo"><label for="b-dias">Días facturados</label><input id="b-dias" type="number" min="1" max="62" required placeholder="Ej.: 30"></div>
@@ -563,6 +577,8 @@ html, body { background: #fff; color: var(--texto); }
       <label class="opcion"><input type="checkbox" name="motivo" value="exclusion"> Me deberían sacar del programa (equipo médico u otra causa)</label>
       <label class="opcion"><input type="checkbox" name="motivo" value="tarifa"> El valor del kWh o el estrato están mal</label>
       <label class="opcion"><input type="checkbox" name="motivo" value="otros_meses"> Me cobran cosas de otros meses sin explicación</label>
+      <label class="opcion"><input type="checkbox" name="motivo" value="no_participa"> La empresa dice que «no participo» en el programa y no sé por qué</label>
+      <label class="opcion"><input type="checkbox" name="motivo" value="cuotas"> No entiendo las cuotas del medidor, de conexión o de financiación</label>
     </div></fieldset>
     <div class="campo"><label for="d-hechos">Qué pasó, en sus palabras</label><textarea id="d-hechos" maxlength="3000"></textarea></div>
     <div class="acciones"><button type="submit">Armar mi carta</button><button type="button" class="secundario" id="d-descargar" disabled>Descargar (.txt)</button><button type="button" class="secundario" id="d-word" disabled>Descargar para Word</button><button type="button" class="secundario" id="d-imprimir" disabled>Imprimir</button></div>
@@ -623,8 +639,43 @@ document.addEventListener('click', async (ev) => {
 
 const redondear = (n, d = 2) => Math.round((n + Number.EPSILON) * 10 ** d) / 10 ** d;
 
+/**
+ * Lee un número escrito como lo trae un recibo colombiano.
+ * - "828,138" o "828.138" (separador de miles) → 828138
+ * - "999,35" o "822.6" (decimales) → 999.35 / 822.6
+ * - "1.234.567,8" o "1,234,567.8" (mixto: el último separador es el decimal)
+ * Si el texto puede leerse con separador de miles o como decimal (p. ej. "992.869"),
+ * se prefiere la lectura de miles cuando queda dentro de [min, max]; si no, la decimal.
+ * Devuelve NaN si no es un número.
+ */
+function leerNumero(v, { min = -Infinity, max = Infinity } = {}) {
+  if (v === null || v === undefined) return NaN;
+  if (typeof v === 'number') return v;
+  let t = String(v).trim().replace(/[\s$]/g, '').replace(/(kwh|cop|pesos)$/i, '');
+  if (!t) return NaN;
+  const neg = t.startsWith('-');
+  if (neg) t = t.slice(1);
+  if (!/^[\d.,]+$/.test(t)) return NaN;
+  const signo = neg ? -1 : 1;
+  const comas = (t.match(/,/g) || []).length, puntos = (t.match(/\./g) || []).length;
+  if (comas && puntos) {
+    const dec = t.lastIndexOf(',') > t.lastIndexOf('.') ? ',' : '.';
+    const miles = dec === ',' ? '.' : ',';
+    return signo * Number(t.split(miles).join('').replace(dec, '.'));
+  }
+  if (!comas && !puntos) return signo * Number(t);
+  const sep = comas ? ',' : '.';
+  const conMiles = new RegExp(`^\\d{1,3}(\\${sep}\\d{3})+$`).test(t);
+  const comoMiles = signo * Number(t.split(sep).join(''));
+  const veces = comas || puntos;
+  const comoDecimal = veces === 1 ? signo * Number(t.replace(sep, '.')) : NaN;
+  if (conMiles && (comoMiles >= min && comoMiles <= max)) return comoMiles;
+  if (Number.isFinite(comoDecimal)) return comoDecimal;
+  return conMiles ? comoMiles : NaN;
+}
+
 function num(v, nombre, { min = 0, max = Infinity, entero = false } = {}) {
-  const n = typeof v === 'string' ? Number(v.replace(/\s/g, '').replace(',', '.')) : Number(v);
+  const n = typeof v === 'string' ? leerNumero(v, { min, max }) : Number(v);
   if (!Number.isFinite(n)) throw new RangeError(`${nombre}: escriba un número.`);
   if (n < min || n > max) throw new RangeError(`${nombre}: debe estar entre ${min} y ${max}.`);
   if (entero && !Number.isInteger(n)) throw new RangeError(`${nombre}: debe ser un número entero.`);
@@ -1071,7 +1122,7 @@ function renderConsejos(ev) {
   const tarifaTxt = f.tarifa.value.trim();
   let tarifa = null;
   if (tarifaTxt) {
-    tarifa = Number(tarifaTxt.replace(/\s/g, '').replace(',', '.'));
+    tarifa = leerNumero(tarifaTxt, { min: 50, max: 5000 });
     if (!Number.isFinite(tarifa) || tarifa < 50 || tarifa > 5000) {
       f.tarifa.setAttribute('aria-invalid', 'true');
       return res.append(el('div', { class: 'resumen-errores', role: 'alert' }, 'El valor del kWh debe ser un número entre 50 y 5.000 pesos.'));
@@ -1179,7 +1230,7 @@ function validarReporteCliente(d) {
   if (!d.municipio_id) e.municipio_id = 'Seleccione un municipio.';
   if (!d.tipo_usuario) e.tipo_usuario = 'Seleccione el tipo de usuario.';
   if (!/^\d{4}-\d{2}$/.test(d.periodo)) e.periodo = 'Indique el mes facturado.';
-  const n = (x) => Number(String(x).replace(/\s/g, '').replace(',', '.'));
+  const n = (x) => leerNumero(x, { min: 0, max: 200000000 });
   if (!d.consumo_kwh || !(n(d.consumo_kwh) > 0)) e.consumo_kwh = 'Escriba el consumo en kWh (número mayor que 0).';
   if (d.valor_total === '' || !(n(d.valor_total) >= 0)) e.valor_total = 'Escriba el valor total en pesos, solo números.';
   if (d.consumo_anterior_kwh !== '' && !(n(d.consumo_anterior_kwh) > 0)) e.consumo_anterior_kwh = 'El consumo del mes anterior debe ser un número mayor que 0.';
@@ -1215,8 +1266,8 @@ async function enviarReporte(ev) {
 }
 
 function comparacionMesAnterior(d) {
-  const n = (x) => (x === '' || x == null ? NaN : Number(String(x).replace(/\s/g, '').replace(/\./g, '').replace(',', '.')));
-  const nk = (x) => (x === '' || x == null ? NaN : Number(String(x).replace(/\s/g, '').replace(',', '.')));
+  const n = (x) => (x === '' || x == null ? NaN : leerNumero(x, { min: 0, max: 200000000 }));
+  const nk = (x) => (x === '' || x == null ? NaN : leerNumero(x, { min: 0.01, max: 100000 }));
   const partes = [];
   const ca = nk(d.consumo_anterior_kwh), c = nk(d.consumo_kwh), va = n(d.valor_anterior), v = n(d.valor_total);
   const pct = (a, b) => Math.round(((b - a) / a) * 100);
@@ -1467,6 +1518,8 @@ const MOTIVOS = {
   exclusion: 'Solicito que se verifique mi exclusión del programa por la causal que indico y se refacture lo que corresponda (Res. CREG 101 120, art. 4; Res. CREG 101 126, art. 3).',
   tarifa: 'Solicito revisar la tarifa, el estrato o la categoría aplicados y corregirlos si no corresponden.',
   otros_meses: 'La factura incluye cobros de periodos anteriores sin explicación. Solicito el detalle y su soporte.',
+  no_participa: 'En la consulta de la empresa mi cuenta figura como «no participa en el programa». Solicito que me informen la causal concreta de no inclusión o exclusión (Res. CREG 101 120, art. 4; Res. CREG 101 126, art. 3), desde qué ciclo aplica y el soporte de esa decisión.',
+  cuotas: 'Solicito el detalle y el soporte de las cuotas de equipo de medida, de conexión y de financiación que aparecen en mi factura: origen del cobro, valor total, cuotas pagadas y pendientes, y tasa de interés aplicada.',
 };
 
 function generarBorrador(ev) {
@@ -1573,6 +1626,8 @@ const NOMBRE_CONCEPTO = {
   cobros_otros_meses: 'Me cobran meses anteriores',
   alumbrado_publico: 'Alumbrado público u otros cobros',
   intereses_reconexion: 'Intereses, reconexión u otros cargos',
+  no_participa: 'Me dicen que no participo en el programa y no sé por qué',
+  cuotas_medidor: 'Cuotas del medidor, de conexión o de financiación',
   no_se: 'No sé, solo sé que subió',
 };
 const AYUDAS = {
@@ -1584,15 +1639,15 @@ const AYUDAS = {
   'r-municipio': 'El municipio donde llega el recibo. No pedimos dirección.',
   'r-tipo': 'Si el recibo es de una casa o de un negocio. Aparece en el recibo como «clase de servicio» o «uso».',
   'r-estrato': 'El estrato que aparece en el recibo (1 a 6). Si es negocio, déjelo en blanco.',
-  'r-periodo': 'El mes que le están cobrando. Mire las fechas «desde – hasta» del recibo y escoja el mes donde termina.',
-  'r-consumo': 'Los kilovatios-hora (kWh) que gastó. En el recibo aparece como «consumo», «energía activa» o «kWh». Es un número como 180 o 320.',
-  'r-valor': 'Lo que le toca pagar en total, en pesos. Escríbalo sin puntos ni signo $. Ej.: 245000.',
+  'r-periodo': 'El mes en que termina el «Periodo facturado» del recibo. Ej.: si dice del 29 de agosto al 29 de septiembre, escoja septiembre de 2026.',
+  'r-consumo': 'Los kilovatios-hora (kWh) que le cobraron. En el recibo aparece como «consumo», «energía activa» o «kWh», junto a las lecturas del medidor. Escríbalo tal como aparece.',
+  'r-valor': 'El «Valor total a pagar», el número grande del recibo, tal como aparece (puede escribirlo con puntos o comas). Ojo: incluye alumbrado público y otros cobros; lo que es solo de energía aparece como «Total servicio».',
   'r-consumo-ant': 'Opcional. Los kWh del recibo del mes pasado. Muchos recibos traen una gráfica o tabla con los consumos de los últimos meses: búsquelo ahí.',
-  'r-valor-ant': 'Opcional. Lo que pagó en total el mes pasado, en pesos, sin puntos ni signo $. Con esto vemos cuánto subió.',
-  'r-dias': 'Cuántos días cubre el recibo. Aparece como «días facturados». Casi siempre entre 28 y 33.',
+  'r-valor-ant': 'Opcional. Lo que pagó el mes pasado. En el recibo de ESSA aparece como «Valor del último pago».',
+  'r-dias': 'Cuántos días cubre el recibo. Si no aparece, cuéntelos con las fechas del «Periodo facturado». Ej.: del 29 de agosto al 29 de septiembre son 31 días.',
   'r-tarifa': 'Opcional. El precio de 1 kWh: «valor kWh», «costo unitario» o «tarifa».',
-  'r-meta': 'Opcional. La meta de consumo del «Plan Energía YA» que la empresa le asignó. Si viene por día, multiplíquela por los días facturados.',
-  'r-cobro': 'Opcional. Lo que le cobraron por pasarse de la meta. Puede llamarse «cobro adicional», «incentivo» o similar.',
+  'r-meta': 'Opcional. Su meta de consumo del «Plan Energía YA». ESSA no la imprime en el recibo: escanee el código QR «¿Cumpliste tu meta de ahorro?» o consúltela en la página de ESSA. Si viene por día, multiplíquela por los días facturados.',
+  'r-cobro': 'Opcional. Lo que le cobraron por pasarse de la meta. En ESSA aparece como «Cobro Adici. Creg 101 120 2026». Si está en blanco, escriba 0.',
   'fs-conceptos': 'El recibo tiene varios cobros. Marque los que le parecen injustos o que no entiende. Puede marcar varios.',
   'r-cambio': '¿Cómo está este recibo frente a los anteriores? Ej.: «el mes pasado pagué 150.000 y ahora 240.000».',
   'r-obs': 'Cuéntenos lo que quiera, pero sin nombres, cédula, dirección ni número de cuenta.',
@@ -1600,7 +1655,7 @@ const AYUDAS = {
   'e-codigo': 'El código que le dimos al enviar la denuncia. Empieza por EJ-.',
   'x-codigo': 'El código que le dimos al enviar la denuncia. Empieza por EJ-.',
   'x-clave': 'La clave que le mostramos una sola vez al enviar la denuncia.',
-  'b-meta': 'Su meta diaria en kWh. Si el recibo trae la meta del mes, divídala entre los días facturados. Ej.: 180 ÷ 30 = 6.',
+  'b-meta': 'Su meta diaria en kWh. ESSA no la imprime en el recibo: escanee el código QR «¿Cumpliste tu meta de ahorro?». Si le dan la meta del mes, divídala entre los días facturados. Ej.: 180 ÷ 30 = 6.',
   'b-dias': 'Los días que cubre el recibo («días facturados»).',
   'b-consumo': 'Los kWh que le cobraron en ese recibo («consumo»).',
   'k-equipo': 'Escoja un aparato y llenamos los datos típicos. Puede cambiarlos.',
