@@ -632,7 +632,7 @@ html, body { background: #fff; color: var(--texto); }
   </defs>
 </svg>
 <a class="salto" href="#contenido">Saltar al contenido</a>
-<div class="aviso-consulta" id="aviso-consulta" role="note"><div class="int"><strong>Versión de consulta sin servidor</strong> (datos copiados el 3 de noviembre de 2026). Consejos, calculadoras, guía y carta de reclamo funcionan; los reportes enviados aquí no se guardan.</div></div>
+<div class="aviso-consulta" id="aviso-consulta" role="note"><div class="int"><strong>Versión de consulta sin servidor</strong> (datos copiados el 7 de noviembre de 2026). Consejos, calculadoras, guía y carta de reclamo funcionan; los reportes enviados aquí no se guardan.</div></div>
 
 <!-- ============ Ventana de bienvenida ============ -->
 <div id="bienvenida" class="velo" role="dialog" aria-modal="true" aria-labelledby="bv-titulo" hidden>
@@ -3044,7 +3044,10 @@ async function hacerConsultaEssa() {
     limpiar(out).append(lecturaEssa(r.datos || {}, r.consultado_en));
     out.querySelector('h4')?.focus?.();
   } catch (e) {
-    limpiar(out).append(el('div', { class: 'resumen-errores', role: 'alert' }, e.message || 'No fue posible consultar a ESSA.'),
+    // La persona sí marcó las cuatro casillas: si el servicio responde que no, es porque el servicio no está al día.
+    const msg = /aceptar todas las autorizaciones/.test(e.message || '') ? 'Usted aceptó la autorización, pero la consulta automática no está disponible en este momento. Mientras tanto, puede ver su meta en la página de ESSA.' : (e.message || 'No fue posible consultar a ESSA.');
+    if (msg !== e.message) console.warn('[Luz Justa] El servicio rechazó la versión de la autorización', VERSION_AUT_ESSA, '— publique la versión nueva de Codigo.gs.');
+    limpiar(out).append(el('div', { class: 'resumen-errores', role: 'alert' }, msg),
       el('p', { class: 'nota' }, 'Puede consultar directamente en la ', el('a', { href: 'https://www.essa.com.co/site/micrositios/Consulta_de_meta_de_consumo_de_energia.html', target: '_blank', rel: 'noopener' }, 'página de metas de ESSA'), '.'));
   } finally { boton.disabled = false; boton.textContent = 'Consultar mi meta'; }
 }
