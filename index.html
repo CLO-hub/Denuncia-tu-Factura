@@ -588,6 +588,59 @@ details.calc-aparato summary { font-weight: 900; color: var(--azul); cursor: poi
 .cargar-pdf .tabla-scroll, .cargar-pdf table { width: 100%; }
 input.leido { border-color: var(--verde-osc); background: var(--verde-claro); }
 
+/* ---- Camino guiado «Revise su recibo en 3 pasos» ---- */
+.cta-guia { display: flex; align-items: center; gap: 14px; padding: 18px 20px; margin: 6px 0 22px; border-radius: 18px; background: var(--fucsia); color: #fff; text-decoration: none; box-shadow: 0 8px 22px rgba(230,0,126,.28); }
+.cta-guia:hover, .cta-guia:focus-visible { background: var(--fucsia-osc); }
+.cta-guia .ico-grande { width: 44px; height: 44px; flex: none; }
+.cta-guia .cta-txt { display: grid; gap: 2px; flex: 1; min-width: 0; }
+.cta-guia strong { font-size: clamp(1.2rem, 3.4vw, 1.5rem); font-weight: 900; }
+.guia-progreso { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 0; margin: 0 0 14px; counter-reset: p; }
+.guia-progreso li { counter-increment: p; text-align: center; font-size: .85rem; font-weight: 700; color: var(--suave); padding-top: 8px; border-top: 5px solid var(--borde, #d6d9e4); }
+.guia-progreso li::before { content: counter(p) ". "; }
+.guia-progreso li.hecho { border-top-color: var(--verde); color: var(--verde-osc); }
+.guia-progreso li.actual { border-top-color: var(--fucsia); color: var(--fucsia-osc); }
+.guia-paso h3 { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; margin-top: 0; }
+.guia-botones { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 10px 0; }
+button.grande { font-size: 1.1rem; padding: 14px 18px; min-height: 54px; }
+.guia-pdf { display: grid; gap: 6px; justify-items: start; margin: 6px 0 12px; }
+.guia-campos .campo input { font-size: 1.1rem; }
+.mr-chip { display: inline-grid; place-items: center; width: 1.5em; height: 1.5em; border-radius: 50%; background: var(--fucsia); color: #fff; font-size: .8em; margin-right: 4px; }
+.mapa-recibo { margin: 8px 0 14px; max-width: 520px; }
+.mapa-recibo svg { width: 100%; height: auto; display: block; }
+.mapa-recibo figcaption { font-size: .9rem; margin-top: 4px; }
+.mr-papel { fill: #fff; stroke: #c9cfdd; stroke-width: 1.5; }
+.mr-franja { fill: #3b4aa8; }
+.mr-caja { fill: #f3f5fb; stroke: #d6dbea; }
+.mr-linea { fill: #d6dbea; }
+.mr-marca { fill: #fde7f2; stroke: #e6007e; stroke-width: 2; }
+.mr-burbuja { fill: #dbe7ff; stroke: #3b4aa8; stroke-width: 1.5; }
+.mr-amarilla { fill: #fff3a8; stroke: #c9a400; }
+.mr-t { font: 700 12px sans-serif; } .mr-blanco { fill: #fff; }
+.mr-p { font: 7.5px sans-serif; fill: #333; } .mr-fuerte { font-weight: 700; }
+.mr-n { font: 800 11px sans-serif; fill: #111; }
+.mr-num circle { fill: #e6007e; stroke: #fff; stroke-width: 2; } .mr-num text { font: 800 11px sans-serif; fill: #fff; }
+.mapa-desplegable summary { cursor: pointer; font-weight: 700; color: var(--morado); margin: 6px 0; }
+.semaforo { display: flex; gap: 16px; align-items: center; padding: 16px 18px; border-radius: 16px; margin: 4px 0 14px; border: 3px solid; }
+.semaforo.verde { background: var(--verde-claro); border-color: var(--verde-osc); }
+.semaforo.amarillo { background: #fff7d6; border-color: #c99700; }
+.semaforo.rojo { background: var(--fucsia-claro); border-color: var(--fucsia); }
+.semaforo-luces { display: grid; gap: 5px; padding: 7px; background: #1f2433; border-radius: 12px; flex: none; }
+.semaforo-luces span { width: 22px; height: 22px; border-radius: 50%; background: #4a5063; }
+.semaforo.rojo .l-rojo { background: #ff2d55; box-shadow: 0 0 10px #ff2d55; }
+.semaforo.amarillo .l-amarillo { background: #ffc800; box-shadow: 0 0 10px #ffc800; }
+.semaforo.verde .l-verde { background: #3ddc6a; box-shadow: 0 0 10px #3ddc6a; }
+.semaforo-titulo { margin: 0 0 4px; font-size: 1.5rem; font-weight: 900; color: var(--titulo); }
+.semaforo p { margin: 0; }
+.pocas-palabras { display: grid; gap: 8px; padding-left: 1.2em; font-size: 1.05rem; }
+.compartir { margin: 14px 0; padding: 12px 14px; border-radius: 14px; background: var(--fondo-suave, #f6f7fb); }
+.frase-compartir { margin: 4px 0 10px; font-style: italic; }
+.boton.whatsapp { background: #128c4a; border-color: #128c4a; color: #fff; }
+#bienvenida button:disabled { opacity: .45; cursor: not-allowed; }
+.bv-falta { font-weight: 700; color: var(--fucsia-osc); }
+.bv-falta.alerta { animation: sacudir .4s ease; background: var(--fucsia-claro); border-radius: 8px; padding: 4px 8px; }
+@keyframes sacudir { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+@media (prefers-reduced-motion: reduce) { .bv-falta.alerta { animation: none; } }
+
 /* Versión de consulta: márgenes seguros en teléfonos y avisos propios */
 main, .franja-int, .pie .int { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .nav { top: env(safe-area-inset-top, 0px); }
@@ -656,11 +709,11 @@ html, body { background: #fff; color: var(--texto); }
       <p>De conformidad con el artículo 15 de la Constitución Política, la Ley 1581 de 2012, el Decreto 1074 de 2015 y la Circular Externa No. 002 del 15 de enero de 2026 de la Superintendencia de Industria y Comercio, autorizo de manera libre, previa, expresa e informada a <strong>Laura Cristina Ahumada García, Senadora de la República</strong>, en calidad de responsable del tratamiento, para recolectar, almacenar, consultar, utilizar, actualizar, conservar y tratar mis datos personales y la información que voluntariamente suministre, con las siguientes finalidades: recibir, documentar, analizar y hacer seguimiento a reportes relacionados con la facturación y prestación de servicios públicos domiciliarios; contactarme y brindarme orientación sobre mis derechos como usuario; remitir, cuando corresponda, la información estrictamente necesaria a las empresas prestadoras y autoridades competentes para la gestión de mi caso; elaborar estudios e informes estadísticos; e informarme e invitarme a futuros proyectos, jornadas, consultas ciudadanas y actividades de defensa de derechos, protección de usuarios, representación social y participación ciudadana. Asimismo, autorizo el envío de comunicaciones relacionadas con la gestión institucional, iniciativas, propuestas y actividades políticas o electorales de la Senadora, a través de correo electrónico, llamadas, mensajes SMS, WhatsApp, listas de difusión y grupos de mensajería, comprendiendo que en estos últimos otros integrantes podrían visualizar mi número o información de perfil.</p>
       <p>La información de mis reportes, facturas y documentos adjuntos no será reutilizada para finalidades distintas sin la correspondiente habilitación legal o autorización. No se utilizarán mis datos para inferir o elaborar perfiles sobre mi orientación política sin la autorización específica exigida por la ley. Declaro conocer que puedo ejercer mis derechos de acceso, actualización, rectificación, supresión y revocatoria de la autorización, mediante los canales establecidos en la Política de Tratamiento de Datos Personales, disponible para consulta en la plataforma. Esta autorización no constituye por sí misma poder o mandato para actuar jurídicamente en mi nombre, ni implica afiliación partidista, adhesión política u obligación de respaldo electoral.</p>
 </div></details>
-      <p class="nota">Para explorar el sitio no es necesaria. Para enviarnos un reporte, sí: si no la marca aquí, se la pedimos antes de enviar.</p>
+      <p class="nota bv-falta" id="bv-falta">Para entrar al sitio, marque la casilla de autorización.</p>
     </div>
     <div class="acciones">
       <button type="button" id="bv-empezar">Voy a explorar todo el sitio</button>
-      <button type="button" class="verde" id="bv-denunciar">Directo a revisar mi factura</button>
+      <button type="button" class="verde" id="bv-denunciar">Revisar mi recibo en 3 pasos</button>
     </div>
     <p class="nota">Una iniciativa de la Senadora Laura Ahumada.</p>
     <p class="aviso-legal">Herramienta informativa de la Senadora Laura Cristina Ahumada García, responsable del tratamiento de datos. No es ESSA, la CREG, la Superintendencia de Servicios Públicos ni ninguna autoridad: no presta el servicio, no factura, no decide reclamos ni radica trámites a su nombre. Los cálculos y la información de terceros (como ESSA) son orientativos y no reemplazan su factura, el cálculo oficial de la empresa ni la asesoría jurídica. Los datos que usted entregue son voluntarios y se tratan conforme a la Ley 1581 de 2012, el Decreto 1074 de 2015 y la <a href="politica-tratamiento-datos.pdf" target="_blank" rel="noopener">Política de Tratamiento de Datos Personales</a>. Puede conocer, actualizar o suprimir sus datos escribiendo a <span data-canal-privacidad>laura.ahumada@senado.gov.co</span>.</p>
@@ -704,6 +757,8 @@ html, body { background: #fff; color: var(--texto); }
   <img class="banner-portada" src="luz-justa-banner.webp" srcset="luz-justa-banner-1200.webp 1200w, luz-justa-banner.webp 2400w" sizes="(max-width: 1200px) 100vw, 1168px" width="2400" height="888" alt="Luz Justa. Una mujer muestra su recibo de la luz: revise si le cobran de más. Senadora Laura Ahumada.">
   <p class="entradilla">Con el Plan «Energía YA» del Gobierno Nacional le van a cobrar más si supera una «meta de consumo» arbitraria que no entiende la realidad del Magdalena Medio. Aquí revisa su recibo, reclama y ahorra sin pasar calor.</p>
   <div class="recibo-aviso"><span class="recibo-icono"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg></span><p><strong>Tenga su recibo de la luz a la mano.</strong></p></div>
+
+  <a class="cta-guia" href="#guia"><svg class="ico-grande" aria-hidden="true"><use href="#i-lupa"/></svg><span class="cta-txt"><strong>Revise su recibo en 3 pasos</strong><span>Le decimos si le cobran de más, por qué subió y qué hacer.</span></span><svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></a>
 
   <h2>Lo que puede hacer en esta aplicación</h2>
   <div class="acciones-grandes">
@@ -880,12 +935,124 @@ html, body { background: #fff; color: var(--texto); }
   </div>
 </section>
 
+<!-- =============== REVISAR MI RECIBO EN 3 PASOS (camino guiado) =============== -->
+<section id="v-guia" class="vista" data-vista="guia" hidden>
+  <div class="cabeza-seccion hero hero-recorte"><img class="hero-nitida" src="luz-justa-banner.webp" srcset="luz-justa-banner-1200.webp 1200w, luz-justa-banner.webp 2400w" sizes="(max-width: 640px) 100vw, 1168px" width="2400" height="888" alt="Luz Justa · Senadora Laura Ahumada"><div class="hero-txt"><h2>Revise su recibo en 3 pasos</h2><p>Le decimos si le cobran de más, por qué subió y qué hacer. Tenga a la mano su recibo.</p></div></div>
+  <ol class="guia-progreso" aria-label="Pasos"><li data-p="1">Su meta</li><li data-p="2">Este recibo</li><li data-p="3">El anterior</li><li data-p="4">Resultado</li></ol>
+
+  <section class="paso-tarjeta guia-paso" data-paso="1" aria-labelledby="gp1">
+    <h3 id="gp1" tabindex="-1"><span class="paso-num">1</span> ¿Su recibo de la luz es de ESSA?</h3>
+    <div class="guia-botones"><button type="button" class="grande" data-essa="si">Sí, es de ESSA</button><button type="button" class="grande secundario" data-essa="no">No / No sé</button></div>
+    <div id="gu-essa" hidden>
+      <p>Escriba el <strong>número de cuenta</strong> (arriba a la derecha del recibo). Traemos su meta del «Plan Energía YA». <svg class="ico-mini" aria-hidden="true"><use href="#i-candado"/></svg> No guardamos el número.</p>
+      <div class="fila-cuenta"><div class="campo"><label for="gu-cuenta">Número de cuenta ESSA</label><input id="gu-cuenta" type="text" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="Ej.: 1234567"></div><div class="acciones"><button type="button" id="gu-consultar">Traer mi meta</button></div></div>
+      <div id="gu-essa-res" aria-live="polite"></div>
+      <p class="nota"><button type="button" class="enlace-boton" data-ir="2">Seguir sin consultar la meta</button></p>
+    </div>
+  </section>
+
+  <section class="paso-tarjeta guia-paso" data-paso="2" aria-labelledby="gp2" hidden>
+    <h3 id="gp2" tabindex="-1"><span class="paso-num">2</span> Los datos de este recibo</h3>
+    <div class="guia-pdf"><label class="boton secundario" for="gn-pdf"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg> Subir el recibo digital (PDF)</label><input id="gn-pdf" class="sr-solo" type="file" accept="application/pdf,.pdf"><span class="nota">O escriba los 4 datos. El PDF se lee en su celular y no se envía.</span><div id="gn-pdf-res" aria-live="polite"></div></div>
+    <figure class="mapa-recibo">
+      <svg viewBox="0 0 360 230" role="img" aria-labelledby="mr-tit" xmlns="http://www.w3.org/2000/svg">
+        <title id="mr-tit">Dónde están los 4 datos en el recibo: 1 días de consumo y 2 consumo en los círculos del centro; 3 valor del kWh al final del cuadro de componentes de costo; 4 valor total a pagar abajo a la derecha.</title>
+        <rect x="4" y="4" width="352" height="222" rx="10" class="mr-papel"/>
+        <rect x="4" y="4" width="352" height="26" rx="10" class="mr-franja"/><text x="16" y="22" class="mr-t mr-blanco">Su recibo de energía</text>
+        <rect x="14" y="40" width="90" height="74" rx="6" class="mr-caja"/><text x="20" y="54" class="mr-p">Datos del medidor</text>
+        <rect x="20" y="60" width="78" height="5" class="mr-linea"/><rect x="20" y="70" width="64" height="5" class="mr-linea"/><rect x="20" y="80" width="72" height="5" class="mr-linea"/><rect x="20" y="90" width="58" height="5" class="mr-linea"/>
+        <rect x="114" y="40" width="130" height="78" rx="6" class="mr-caja"/><text x="120" y="54" class="mr-p">Componentes de costo (CU)</text>
+        <rect x="120" y="60" width="110" height="5" class="mr-linea"/><rect x="120" y="70" width="100" height="5" class="mr-linea"/><rect x="120" y="80" width="106" height="5" class="mr-linea"/>
+        <rect x="118" y="92" width="122" height="20" rx="4" class="mr-marca"/><text x="122" y="105" class="mr-p mr-fuerte">G+T+D+Cv+PR+R=CUv: 973,45</text>
+        <circle cx="140" cy="146" r="16" class="mr-burbuja"/><text x="140" y="151" class="mr-n" text-anchor="middle">31</text><text x="140" y="172" class="mr-p" text-anchor="middle">Días de consumo</text>
+        <circle cx="200" cy="146" r="16" class="mr-burbuja mr-amarilla"/><text x="200" y="149" class="mr-n" text-anchor="middle">187</text><text x="200" y="157" class="mr-p" text-anchor="middle">kWh</text><text x="200" y="172" class="mr-p" text-anchor="middle">Consumo</text>
+        <rect x="254" y="40" width="94" height="96" rx="6" class="mr-caja"/><text x="260" y="54" class="mr-p">Liquidación</text>
+        <rect x="260" y="60" width="80" height="5" class="mr-linea"/><rect x="260" y="70" width="70" height="5" class="mr-linea"/><rect x="260" y="80" width="76" height="5" class="mr-linea"/>
+        <rect x="248" y="186" width="100" height="30" rx="5" class="mr-marca"/><text x="298" y="200" class="mr-n" text-anchor="middle">$398.743</text><text x="298" y="211" class="mr-p" text-anchor="middle">Valor total a pagar</text>
+        <g class="mr-num"><circle cx="118" cy="132" r="9"/><text x="118" y="136" text-anchor="middle">1</text></g>
+        <g class="mr-num"><circle cx="222" cy="132" r="9"/><text x="222" y="136" text-anchor="middle">2</text></g>
+        <g class="mr-num"><circle cx="244" cy="92" r="9"/><text x="244" y="96" text-anchor="middle">3</text></g>
+        <g class="mr-num"><circle cx="244" cy="188" r="9"/><text x="244" y="192" text-anchor="middle">4</text></g>
+      </svg>
+      <figcaption><b>1</b> Días de consumo · <b>2</b> Consumo (kWh) · <b>3</b> Valor del kWh (CUv) · <b>4</b> Valor total a pagar. <span class="nota">Dibujo de ejemplo, con cifras de muestra.</span></figcaption>
+    </figure>
+    <div class="fila-2 guia-campos">
+        <div class="campo"><label for="gn-dias"><b class="mr-chip">1</b> Días de consumo *</label><input id="gn-dias" type="number" inputmode="numeric" min="1" max="62" placeholder="Ej.: 30"></div>
+        <div class="campo"><label for="gn-kwh"><b class="mr-chip">2</b> Consumo en kWh *</label><input id="gn-kwh" type="text" inputmode="decimal" placeholder="Ej.: 187"></div>
+        <div class="campo"><label for="gn-cu"><b class="mr-chip">3</b> Valor del kWh *</label><input id="gn-cu" type="text" inputmode="decimal" placeholder="Ej.: 973,45"></div>
+        <div class="campo"><label for="gn-total"><b class="mr-chip">4</b> Valor total a pagar *</label><input id="gn-total" type="text" inputmode="numeric" placeholder="Ej.: 398.743"></div>
+      </div>
+    <details class="guia-mas"><summary>Más datos (opcional): estrato, subsidio, cobro del plan</summary>
+      <div class="fila-2">
+        <div class="campo"><label for="gn-estrato">Estrato</label><select id="gn-estrato"><option value="">No sé / no aplica</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+        <div class="campo"><label for="gn-sub">Subsidio ($)</label><input id="gn-sub" type="text" inputmode="numeric" placeholder="Ej.: 25.261"></div>
+        <div class="campo"><label for="gn-cobro">«Cobro Adici. Creg 101 120» ($)</label><input id="gn-cobro" type="text" inputmode="numeric" placeholder="Si está vacío, déjelo vacío"></div>
+        <div class="campo"><label class="opcion" for="gn-estimado"><input type="checkbox" id="gn-estimado"> <span>Dice «consumo cobrado por promedio» o «estimado»</span></label></div>
+      </div>
+    </details>
+    <div id="gn-err" class="resumen-errores" hidden></div>
+    <div class="acciones"><button type="button" class="grande" data-sig="3">Siguiente</button><button type="button" class="secundario" data-ir="1">Atrás</button></div>
+  </section>
+
+  <section class="paso-tarjeta guia-paso" data-paso="3" aria-labelledby="gp3" hidden>
+    <h3 id="gp3" tabindex="-1"><span class="paso-num">3</span> ¿Tiene el recibo del mes anterior?</h3>
+    <p>Con él le decimos <strong>por qué subió</strong>: si fue el precio, los días cobrados, su consumo o una deuda.</p>
+    <div class="guia-botones"><button type="button" class="grande" data-ant="si">Sí, lo tengo</button><button type="button" class="grande secundario" data-ant="no">No lo tengo</button></div>
+    <div id="gu-ant" hidden>
+      <div class="guia-pdf"><label class="boton secundario" for="ga-pdf"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg> Subir el recibo digital (PDF)</label><input id="ga-pdf" class="sr-solo" type="file" accept="application/pdf,.pdf"><span class="nota">O escriba los 4 datos. El PDF se lee en su celular y no se envía.</span><div id="ga-pdf-res" aria-live="polite"></div></div>
+      <div class="fila-2 guia-campos">
+        <div class="campo"><label for="ga-dias"><b class="mr-chip">1</b> Días de consumo *</label><input id="ga-dias" type="number" inputmode="numeric" min="1" max="62" placeholder="Ej.: 30"></div>
+        <div class="campo"><label for="ga-kwh"><b class="mr-chip">2</b> Consumo en kWh *</label><input id="ga-kwh" type="text" inputmode="decimal" placeholder="Ej.: 187"></div>
+        <div class="campo"><label for="ga-cu"><b class="mr-chip">3</b> Valor del kWh *</label><input id="ga-cu" type="text" inputmode="decimal" placeholder="Ej.: 973,45"></div>
+        <div class="campo"><label for="ga-total"><b class="mr-chip">4</b> Valor total a pagar *</label><input id="ga-total" type="text" inputmode="numeric" placeholder="Ej.: 398.743"></div>
+      </div>
+      <fieldset class="sub-grupo"><legend>¿Pagó completo ese recibo anterior?</legend>
+        <label class="opcion"><input type="radio" name="ga-pago" value="si" checked> Sí</label>
+        <label class="opcion"><input type="radio" name="ga-pago" value="no"> No lo pagué</label>
+        <label class="opcion"><input type="radio" name="ga-pago" value="parte"> Una parte</label>
+        <div class="campo" id="ga-parte-caja" hidden><label for="ga-pagado">¿Cuánto pagó?</label><input id="ga-pagado" type="text" inputmode="numeric" placeholder="Ej.: 100.000"></div>
+      </fieldset>
+      <div id="ga-err" class="resumen-errores" hidden></div>
+      <div class="acciones"><button type="button" class="grande" id="gu-ver">Ver mi resultado</button></div>
+    </div>
+    <div class="acciones"><button type="button" class="secundario" data-ir="2">Atrás</button></div>
+  </section>
+
+  <section class="paso-tarjeta guia-paso" data-paso="4" aria-labelledby="gp4" hidden>
+    <h3 id="gp4" tabindex="-1">Su resultado</h3>
+    <div id="gu-resultado"></div>
+    <p class="nota"><button type="button" class="enlace-boton" data-ir="1">Empezar de nuevo</button></p>
+  </section>
+</section>
+
 <!-- =============== ¿POR QUÉ SUBIÓ MI RECIBO? =============== -->
 <section id="v-subio" class="vista" data-vista="subio" hidden>
   <div class="cabeza-seccion hero hero-recorte"><img class="hero-nitida" src="luz-justa-banner.webp" srcset="luz-justa-banner-1200.webp 1200w, luz-justa-banner.webp 2400w" sizes="(max-width: 640px) 100vw, 1168px" width="2400" height="888" alt="Luz Justa · Senadora Laura Ahumada"><div class="hero-txt"><h2>¿Por qué subió mi recibo?</h2><p>Le decimos cuánto es por el precio del kWh, los días cobrados, su consumo, el subsidio, el cobro del plan o deudas.</p></div></div>
   <section id="por-que-subio" class="paso-tarjeta" aria-labelledby="ps-titulo">
     <div class="paso-cab"><svg class="ico-paso" aria-hidden="true"><use href="#i-pesos"/></svg><h3 id="ps-titulo">Compare su recibo anterior con el nuevo</h3></div>
     <p>Tenga a la mano <strong>su recibo anterior y el nuevo</strong>. Copie de cada uno estos datos y le decimos cuánto de la subida es por el <strong>precio del kWh</strong>, por los <strong>días cobrados</strong>, por <strong>su consumo</strong>, por el <strong>subsidio</strong>, por el <strong>cobro del plan</strong> o por <strong>deudas</strong>. <svg class="ico-mini" aria-hidden="true"><use href="#i-candado"/></svg> Esto se calcula en su celular: no se envía ni se guarda.</p>
+    <details class="mapa-desplegable"><summary>¿Dónde encuentro estos datos en mi recibo?</summary><figure class="mapa-recibo">
+      <svg viewBox="0 0 360 230" role="img" aria-labelledby="mr-tit2" xmlns="http://www.w3.org/2000/svg">
+        <title id="mr-tit2">Dónde están los 4 datos en el recibo: 1 días de consumo y 2 consumo en los círculos del centro; 3 valor del kWh al final del cuadro de componentes de costo; 4 valor total a pagar abajo a la derecha.</title>
+        <rect x="4" y="4" width="352" height="222" rx="10" class="mr-papel"/>
+        <rect x="4" y="4" width="352" height="26" rx="10" class="mr-franja"/><text x="16" y="22" class="mr-t mr-blanco">Su recibo de energía</text>
+        <rect x="14" y="40" width="90" height="74" rx="6" class="mr-caja"/><text x="20" y="54" class="mr-p">Datos del medidor</text>
+        <rect x="20" y="60" width="78" height="5" class="mr-linea"/><rect x="20" y="70" width="64" height="5" class="mr-linea"/><rect x="20" y="80" width="72" height="5" class="mr-linea"/><rect x="20" y="90" width="58" height="5" class="mr-linea"/>
+        <rect x="114" y="40" width="130" height="78" rx="6" class="mr-caja"/><text x="120" y="54" class="mr-p">Componentes de costo (CU)</text>
+        <rect x="120" y="60" width="110" height="5" class="mr-linea"/><rect x="120" y="70" width="100" height="5" class="mr-linea"/><rect x="120" y="80" width="106" height="5" class="mr-linea"/>
+        <rect x="118" y="92" width="122" height="20" rx="4" class="mr-marca"/><text x="122" y="105" class="mr-p mr-fuerte">G+T+D+Cv+PR+R=CUv: 973,45</text>
+        <circle cx="140" cy="146" r="16" class="mr-burbuja"/><text x="140" y="151" class="mr-n" text-anchor="middle">31</text><text x="140" y="172" class="mr-p" text-anchor="middle">Días de consumo</text>
+        <circle cx="200" cy="146" r="16" class="mr-burbuja mr-amarilla"/><text x="200" y="149" class="mr-n" text-anchor="middle">187</text><text x="200" y="157" class="mr-p" text-anchor="middle">kWh</text><text x="200" y="172" class="mr-p" text-anchor="middle">Consumo</text>
+        <rect x="254" y="40" width="94" height="96" rx="6" class="mr-caja"/><text x="260" y="54" class="mr-p">Liquidación</text>
+        <rect x="260" y="60" width="80" height="5" class="mr-linea"/><rect x="260" y="70" width="70" height="5" class="mr-linea"/><rect x="260" y="80" width="76" height="5" class="mr-linea"/>
+        <rect x="248" y="186" width="100" height="30" rx="5" class="mr-marca"/><text x="298" y="200" class="mr-n" text-anchor="middle">$398.743</text><text x="298" y="211" class="mr-p" text-anchor="middle">Valor total a pagar</text>
+        <g class="mr-num"><circle cx="118" cy="132" r="9"/><text x="118" y="136" text-anchor="middle">1</text></g>
+        <g class="mr-num"><circle cx="222" cy="132" r="9"/><text x="222" y="136" text-anchor="middle">2</text></g>
+        <g class="mr-num"><circle cx="244" cy="92" r="9"/><text x="244" y="96" text-anchor="middle">3</text></g>
+        <g class="mr-num"><circle cx="244" cy="188" r="9"/><text x="244" y="192" text-anchor="middle">4</text></g>
+      </svg>
+      <figcaption><b>1</b> Días de consumo · <b>2</b> Consumo (kWh) · <b>3</b> Valor del kWh (CUv) · <b>4</b> Valor total a pagar. <span class="nota">Dibujo de ejemplo, con cifras de muestra.</span></figcaption>
+    </figure></details>
     <p class="leyenda-obligatorios"><span class="ast">*</span> Obligatorio: 4 datos de cada recibo. Lo demás es opcional, pero ayuda a explicar mejor.</p>
     <div class="cargar-pdf">
       <p class="cargar-pdf-tit"><svg class="ico-mini" aria-hidden="true"><use href="#i-recibo"/></svg> <strong>¿Tiene sus recibos digitales en PDF?</strong> Súbalos (2 o 3) y llenamos los datos por usted.</p>
@@ -1047,7 +1214,7 @@ html, body { background: #fff; color: var(--texto); }
 
 <aside class="franja-protesta" aria-label="Campaña contra el plan Energía YA">
   <p><strong>NO al plan «Energía YA»</strong> <span class="fp-sub">· La luz no es un lujo en el Magdalena Medio</span></p>
-  <a href="#revisar" class="fp-boton">Revisar mi factura</a>
+  <a href="#guia" class="fp-boton">Revisar mi recibo</a>
 </aside>
 <div id="autorizacion-essa" class="velo" role="dialog" aria-modal="true" aria-labelledby="ae-titulo" hidden>
   <div class="ventana ventana-legal">
@@ -1880,7 +2047,7 @@ function errorRed(cont, e) {
 }
 
 // ---------------- Enrutador ----------------
-const VISTAS = ['inicio', 'revisar', 'subio', 'reportar', 'consejos', 'reclamar', 'datos'];
+const VISTAS = ['inicio', 'guia', 'revisar', 'subio', 'reportar', 'consejos', 'reclamar', 'datos'];
 // Direcciones antiguas que siguen funcionando.
 const ALIAS = { denunciar: 'reportar', calculadoras: 'revisar', tendencias: 'inicio', plan: 'inicio', participar: 'inicio', privacidad: 'inicio' };
 function mostrar(forzada) {
@@ -1899,7 +2066,7 @@ function mostrar(forzada) {
   }
   for (const s of document.querySelectorAll('.vista')) s.hidden = s.dataset.vista !== vista;
   document.querySelectorAll('.nav a').forEach((a) => { if (a.getAttribute('href') === `#${vista}`) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
-  const titulo = { inicio: '', revisar: 'Revisar mi factura', subio: '¿Por qué subió mi recibo?', reportar: 'Repórtenos su factura', datos: 'Tratamiento de datos personales', consejos: 'Ahorrar', reclamar: 'Reclamar' }[vista];
+  const titulo = { inicio: '', guia: 'Revise su recibo en 3 pasos', revisar: 'Revisar mi factura', subio: '¿Por qué subió mi recibo?', reportar: 'Repórtenos su factura', datos: 'Tratamiento de datos personales', consejos: 'Ahorrar', reclamar: 'Reclamar' }[vista];
   document.title = (titulo ? `${titulo} · ` : '') + 'Luz Justa · Magdalena Medio';
   if (!estado.cargados.has(vista)) { estado.cargados.add(vista); CARGADORES[vista]?.(); }
   if (vista !== 'inicio') $('#contenido').focus({ preventScroll: true });
@@ -2172,6 +2339,10 @@ function explicarRecibos(ev) {
   if (!ruta.some((x) => x[2] === '#reportar')) ruta.push(['Repórtenos su caso', 'Con sus datos hacemos control político desde el Senado.', '#reportar']);
   ruta.push(['Si algo no cuadra, reclame', 'Le armamos la carta para ESSA.', '#carta']);
   out.append(el('h4', {}, 'Qué puede hacer'), el('ol', { class: 'ruta' }, ruta.map(([t, d, href]) => el('li', {}, el('strong', {}, t), ' ', d, href ? el('span', {}, ' ', el('a', { href }, 'Ir')) : ''))));
+  const frase = `Comparé mis recibos de la luz en Luz Justa: lo del mes ${r.cambioMes >= 0 ? 'subió' : 'bajó'} ${fmtPesos(Math.abs(r.cambioMes))}${r.pctMes != null ? ` (${fmtNum(Math.abs(r.pctMes), 1)} %)` : ''}${r.partes.precio > 0 ? ` y cada kWh subió ${fmtNum(r.pctPrecio, 1)} %` : ''}. Compare los suyos: ${SITIO_PUBLICO}#subio`;
+  out.append(el('div', { class: 'compartir' }, el('p', { class: 'nota' }, 'Cuénteselo a otros:'), el('p', { class: 'frase-compartir', id: 'ps-frase' }, frase),
+    el('div', { class: 'acciones' }, el('a', { class: 'boton whatsapp', href: `https://wa.me/?text=${encodeURIComponent(frase)}`, target: '_blank', rel: 'noopener' }, 'Compartir por WhatsApp'),
+      el('button', { type: 'button', class: 'secundario', onclick: (ev) => copiarFrase(ev.currentTarget, '#ps-frase') }, 'Copiar el texto'))));
   out.querySelector('h4')?.focus({ preventScroll: true });
   out.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -2227,6 +2398,170 @@ function instalarComparar() {
   $('#form-comparar')?.addEventListener('submit', explicarRecibos);
   $('#ps-traer')?.addEventListener('click', traerDatosRevisar);
   document.querySelectorAll('input[name=pb-pago]').forEach((x) => x.addEventListener('change', () => { $('#pb-parte-caja').hidden = document.querySelector('input[name=pb-pago]:checked')?.value !== 'parte'; }));
+}
+
+// ---------------- Camino guiado: «Revise su recibo en 3 pasos» ----------------
+const SITIO_PUBLICO = 'https://clo-hub.github.io/Denuncia-tu-Factura/';
+const guia = { essa: null, ant: false };
+function guiaIr(n) {
+  document.querySelectorAll('#v-guia .guia-paso').forEach((x) => { x.hidden = Number(x.dataset.paso) !== n; });
+  document.querySelectorAll('#v-guia .guia-progreso li').forEach((li) => { const p = Number(li.dataset.p); li.classList.toggle('hecho', p < n); li.classList.toggle('actual', p === n); });
+  const h = $(`#v-guia .guia-paso[data-paso="${n}"] h3`); h?.focus({ preventScroll: true });
+  $('#v-guia .guia-progreso')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+const val = (id) => $(id)?.value.trim() ?? '';
+function reciboGuia(p) { return { dias: val(`#${p}-dias`), kwh: val(`#${p}-kwh`), cu: val(`#${p}-cu`), total: val(`#${p}-total`) }; }
+function faltanGuia(p) {
+  const r = reciboGuia(p); const f = [];
+  if (!(Number(r.dias) >= 1 && Number(r.dias) <= 62)) f.push('1. los días de consumo');
+  if (!(leerNumero(r.kwh, { min: 0, max: 1e5 }) >= 0)) f.push('2. el consumo en kWh');
+  if (!(leerNumero(r.cu, { min: 50, max: 5000 }) >= 50)) f.push('3. el valor del kWh');
+  if (!(leerNumero(r.total, { min: 0, max: 2e8 }) >= 0)) f.push('4. el valor total a pagar');
+  return f;
+}
+function avisoFaltan(id, f) { const e = $(id); if (!f.length) { e.hidden = true; return true; } limpiar(e).append(el('strong', {}, 'Falta: '), f.join(', '), '. Mire el dibujo: cada número le muestra dónde está.'); e.hidden = false; e.focus?.(); return false; }
+async function guiaPdf(p, ev) {
+  const a = ev.target.files?.[0]; const out = limpiar($(`#${p}-pdf-res`)); ev.target.value = '';
+  if (!a) return;
+  out.append(el('p', { class: 'cargando' }, 'Leyendo su recibo…'));
+  try {
+    const r = await leerReciboPdf(a); limpiar(out);
+    const poner = (id, v) => { const x = $(`#${p}-${id}`); if (x && v != null) { x.value = String(v).replace('.', ','); x.classList.add('leido'); } };
+    poner('dias', r.dias); poner('kwh', r.kwh); poner('cu', r.cu); poner('total', r.total == null ? null : Math.round(r.total));
+    if (p === 'gn') { poner('sub', r.subsidio ? Math.round(r.subsidio) : null); poner('cobro', r.cobro ? Math.round(r.cobro) : null); if (r.estrato) $('#gn-estrato').value = r.estrato; if (r.estimado) $('#gn-estimado').checked = true; }
+    if (p === 'ga' && r.mora) { /* la mora la informa el recibo nuevo */ }
+    out.append(el('p', { class: 'estado-ok' }, icono('check', 'ico-mini'), ` Leímos su recibo${r.desde ? ` del ${fechaCorta(r.desde)} al ${fechaCorta(r.hasta)}` : ''}. Revise los datos en verde.`));
+    for (const x of r.avisos) out.append(el('p', { class: 'nota' }, x));
+    if (r.faltan.length) out.append(el('p', { class: 'no-cuadra' }, 'Algunos datos no aparecieron: escríbalos a mano.'));
+  } catch (e) { limpiar(out).append(el('p', { class: 'error-campo' }, e.message)); }
+}
+function guiaConsultarEssa() {
+  const out = limpiar($('#gu-essa-res'));
+  const cuenta = val('#gu-cuenta').replace(/\D/g, '');
+  if (!/^\d{5,12}$/.test(cuenta)) return out.append(el('p', { class: 'error-campo' }, 'Escriba el número de cuenta de su recibo de ESSA, solo números.'));
+  cuentaPendiente = cuenta;
+  abrirAutorizacion();
+  essaCtx = { out: '#gu-essa-res', boton: '#gu-consultar', input: '#gu-cuenta', alResultado: (d, caja) => {
+    const v = verificarEssa(d); guia.essa = v;
+    if (v.noAplica) caja.append(el('p', {}, el('strong', {}, 'ESSA dice que su cuenta no participa en el programa este mes. '), 'Entonces no le pueden cobrar el valor adicional del plan.'));
+    else caja.append(el('p', { class: 'estado-ok' }, icono('check', 'ico-mini'), ` Su meta es ${fmtNum(v.meta, 0)} kWh y ESSA reporta ${fmtNum(v.consumo, 0)} kWh (${fmtNum(v.pct, 0)} % de la meta)${d.Periodo ? `, periodo ${d.Periodo}` : ''}.`));
+    if (!v.noAplica && !val('#gn-kwh')) $('#gn-kwh').value = String(v.consumo).replace('.', ',');
+    caja.append(el('div', { class: 'acciones' }, el('button', { type: 'button', class: 'grande', onclick: () => guiaIr(2) }, 'Siguiente')));
+  } };
+}
+const pesoDia = (total, deuda, dias) => (total - (deuda || 0)) / dias;
+function semaforoGuia({ v, cobroRecibo, estimado, cmp, dias }) {
+  const rojo = [], amarillo = [];
+  if (estimado) rojo.push('le cobraron un consumo estimado, no la lectura de su medidor');
+  if (v && !v.noAplica && (!v.cuadraExcedente || !v.cuadraAhorro)) rojo.push('las cifras de ESSA no cuadran con la fórmula de la norma');
+  if (v && !v.noAplica && v.pedagogico && cobroRecibo > 0) rojo.push('le cobraron el plan en su primer ciclo, que solo era informativo');
+  if (v && !v.noAplica && v.zona !== 'cobro' && cobroRecibo > 0) rojo.push('le cobraron el plan sin pasarse del 110 % de su meta');
+  if (v && v.noAplica && cobroRecibo > 0) rojo.push('le cobraron el plan aunque ESSA dice que no participa');
+  if (cmp && cmp.cambioDeuda > 0) amarillo.push('trae deuda de un recibo anterior');
+  if (v && !v.noAplica && v.zona === 'cobro' && !v.pedagogico) amarillo.push('se pasó de su meta y le cobran el adicional');
+  if (cmp && cmp.pctMes != null && cmp.pctMes >= 10) amarillo.push(`lo del mes subió ${fmtNum(cmp.pctMes, 0)} %`);
+  if (rojo.length) return { color: 'rojo', titulo: 'Reclame', motivos: rojo };
+  if (amarillo.length) return { color: 'amarillo', titulo: 'Revise esto', motivos: amarillo };
+  return { color: 'verde', titulo: 'Su recibo está bien', motivos: ['no vemos cobros que no correspondan'] };
+}
+function resultadoGuia() {
+  if (!avisoFaltan('#gn-err', faltanGuia('gn'))) return guiaIr(2);
+  let anterior = null;
+  if (guia.ant) {
+    if (!avisoFaltan('#ga-err', faltanGuia('ga'))) return;
+    anterior = { ...reciboGuia('ga') };
+  }
+  const nuevo = { ...reciboGuia('gn'), subsidio: val('#gn-sub'), cobro: val('#gn-cobro'), estimado: $('#gn-estimado').checked };
+  const estrato = val('#gn-estrato');
+  let cmp = null;
+  if (anterior) {
+    const pago = document.querySelector('input[name=ga-pago]:checked')?.value || 'si';
+    const totA = leerNumero(anterior.total, { min: 0, max: 2e8 });
+    if (pago === 'no') nuevo.deuda = totA;
+    if (pago === 'parte') nuevo.deuda = Math.max(0, totA - (leerNumero(val('#ga-pagado'), { min: 0, max: 2e8 }) || 0));
+    try { cmp = explicarCambio({ anterior, actual: nuevo, estrato }); } catch (e) { const er = $('#ga-err'); limpiar(er).append(e.message); er.hidden = false; return; }
+  }
+  const dias = Number(nuevo.dias), kwh = leerNumero(nuevo.kwh, { min: 0, max: 1e5 }), cu = leerNumero(nuevo.cu, { min: 50, max: 5000 }), total = leerNumero(nuevo.total, { min: 0, max: 2e8 });
+  const cobroRecibo = leerNumero(nuevo.cobro || '0', { min: 0, max: 2e8 }) || 0;
+  const v = guia.essa;
+  const sem = semaforoGuia({ v, cobroRecibo, estimado: nuevo.estimado, cmp, dias });
+  const frases = [];
+  const porDia = pesoDia(total, nuevo.deuda, dias);
+  if (cmp) {
+    const sube = cmp.cambioMes > 0;
+    frases.push(cmp.cambioDeuda > 0 ? `Su recibo subió ${fmtPesos(cmp.cambioTotal)}, pero ${fmtPesos(cmp.cambioDeuda)} son de un recibo anterior sin pagar. Lo de este mes ${sube ? 'subió' : 'bajó'} ${fmtPesos(Math.abs(cmp.cambioMes))}.` : `Su recibo ${cmp.cambioTotal > 0 ? 'subió' : cmp.cambioTotal < 0 ? 'bajó' : 'quedó igual'}${cmp.cambioTotal ? ` ${fmtPesos(Math.abs(cmp.cambioTotal))} (${pct(cmp.pctTotal)})` : ''}.`);
+    const top = ['precio', 'dias', 'consumo'].filter((k) => cmp.partes[k] > 0).sort((a, b) => cmp.partes[b] - cmp.partes[a])[0];
+    if (top === 'precio') frases.push(`La causa principal es el precio: cada kWh le cuesta ${pesoKwh(cmp.cambioCu)} más que antes (${pct(cmp.pctPrecio)}). Eso no depende de usted.`);
+    if (top === 'dias') frases.push(`La causa principal es que este recibo cobra ${cmp.actual.dias} días y el anterior ${cmp.anterior.dias}. Aunque gaste igual cada día, más días cuestan más.`);
+    if (top === 'consumo') frases.push(`La causa principal es que gastó más luz por día: ${fmtNum(cmp.kwhDiaActual, 1)} kWh diarios, antes ${fmtNum(cmp.kwhDiaAnterior, 1)}.`);
+    if (sube && porDia > 0) frases.push(`La subida del mes equivale a ${fmtNum(cmp.cambioMes / pesoDia(leerNumero(anterior.total, { min: 0, max: 2e8 }), 0, Number(anterior.dias)), 1)} días más de recibo.`);
+  }
+  frases.push(`Su recibo le cuesta unos ${fmtPesos(porDia)} por día. Cada kWh le vale ${pesoKwh(cu)}.`);
+  if (v && !v.noAplica) frases.push(v.zona === 'cobro' ? `Plan «Energía YA»: se pasó del 110 % de su meta (${fmtNum(v.pct, 0)} %). ${v.pedagogico ? `El cobro de ${fmtPesos(v.cobro)} es informativo: no se paga.` : `Le cobran ${fmtPesos(v.cobro)} adicional.`}` : v.zona === 'neutral' ? `Plan «Energía YA»: está dentro de su meta (${fmtNum(v.pct, 0)} %). No le cobran nada adicional.` : `Plan «Energía YA»: gastó menos del 90 % de su meta (${fmtNum(v.pct, 0)} %). No le cobran nada y podría tener un beneficio.`);
+  else if (v && v.noAplica) frases.push('Plan «Energía YA»: ESSA dice que su cuenta no participa. No le pueden cobrar el adicional.');
+  else if (cobroRecibo > 0) frases.push(`Su recibo trae ${fmtPesos(cobroRecibo)} de cobro adicional del plan. Consulte su meta para saber si está bien cobrado.`);
+  const e = Number(estrato);
+  if (e >= 1 && e <= 3 && kwh > CONSUMO_SUBSISTENCIA_KWH) frases.push(`Solo los primeros ${CONSUMO_SUBSISTENCIA_KWH} kWh tienen subsidio. Los otros ${fmtNum(kwh - CONSUMO_SUBSISTENCIA_KWH, 0)} los paga a precio completo.`);
+  // Qué hacer
+  const ruta = [];
+  if (cmp && cmp.cambioDeuda > 0) ruta.push(['Póngase al día o pida un acuerdo de pago a ESSA', null]);
+  if (sem.color === 'rojo') ruta.push(['Reclame a ESSA: le armamos la carta', '#carta']);
+  if (cmp && ['consumo'].includes(['precio', 'dias', 'consumo'].sort((a, b) => cmp.partes[b] - cmp.partes[a])[0])) ruta.push(['Vea qué aparato gasta más y cómo ahorrar sin pasar calor', '#consejos']);
+  ruta.push(['Envíenos su caso: con él hacemos control político', '#reportar']);
+  // Frase para compartir
+  // Lo que se comparte no menciona deudas ni datos del hogar: solo lo que le pasa a todos.
+  const lineaMes = cmp ? `Este mes mi recibo ${cmp.cambioMes >= 0 ? 'subió' : 'bajó'} ${fmtPesos(Math.abs(cmp.cambioMes))}${cmp.pctMes != null ? ` (${fmtNum(Math.abs(cmp.pctMes), 1)} %)` : ''}${cmp.partes.precio > 0 ? ` y el kWh subió ${fmtNum(cmp.pctPrecio, 1)} %` : ''}.` : '';
+  const compartir = `Revisé mi recibo de la luz en Luz Justa. ${lineaMes} Cada kWh ya cuesta ${pesoKwh(cu)}. Revise el suyo en 3 pasos: ${SITIO_PUBLICO}`.replace(/\s+/g, ' ');
+  const out = limpiar($('#gu-resultado'));
+  out.append(el('div', { class: `semaforo ${sem.color}`, role: 'status' },
+    el('div', { class: 'semaforo-luces', 'aria-hidden': 'true' }, el('span', { class: 'l-rojo' }), el('span', { class: 'l-amarillo' }), el('span', { class: 'l-verde' })),
+    el('div', {}, el('p', { class: 'semaforo-titulo' }, sem.titulo), el('p', {}, `Porque ${sem.motivos.join('; ')}.`))),
+    el('h4', {}, 'En pocas palabras'), el('ul', { class: 'pocas-palabras' }, frases.map((f) => el('li', {}, f))),
+    el('h4', {}, 'Qué puede hacer'), el('ol', { class: 'ruta' }, ruta.map(([t, href]) => el('li', {}, href ? el('a', { href, 'data-guia-ir': href }, t) : t))),
+    el('div', { class: 'compartir' }, el('p', { class: 'nota' }, 'Cuénteselo a otros:'), el('p', { class: 'frase-compartir', id: 'gu-frase' }, compartir),
+      el('div', { class: 'acciones' },
+        el('a', { class: 'boton whatsapp', href: `https://wa.me/?text=${encodeURIComponent(compartir)}`, target: '_blank', rel: 'noopener' }, 'Compartir por WhatsApp'),
+        el('button', { type: 'button', class: 'secundario', onclick: (ev) => copiarFrase(ev.currentTarget) }, 'Copiar el texto'))),
+    el('p', { class: 'nota' }, el('span', { class: 'etq estimacion' }, 'Cálculo propio'), 'Con los datos que escribió. Es orientativo: no reemplaza el cálculo de ESSA. ', el('a', { href: '#subio', 'data-guia-ir': '#subio' }, 'Ver el detalle de la comparación'), '.'));
+  guiaPasarDatos(nuevo, anterior, estrato);
+  guiaIr(4);
+}
+async function copiarFrase(boton, id = '#gu-frase') {
+  const t = $(id).textContent;
+  try { await navigator.clipboard.writeText(t); boton.textContent = 'Copiado'; }
+  catch { const r = document.createRange(); r.selectNodeContents($(id)); const s = getSelection(); s.removeAllRanges(); s.addRange(r); boton.textContent = 'Texto seleccionado: cópielo'; }
+}
+// Lo que la persona escribió en el camino guiado llena los formularios de reportar, comparar y la carta.
+function guiaPasarDatos(nuevo, anterior, estrato) {
+  const poner = (id, v) => { const x = $(id); if (x && v != null && v !== '') x.value = v; };
+  const v = guia.essa;
+  for (const pre of ['#g', '#r']) {
+    poner(`${pre}-dias`, nuevo.dias); poner(`${pre}-consumo`, nuevo.kwh); poner(`${pre}-valor`, nuevo.total); poner(`${pre}-tarifa`, nuevo.cu); poner(`${pre}-estrato`, estrato);
+    if (anterior) { poner(`${pre}-consumo-ant`, anterior.kwh); poner(`${pre}-valor-ant`, anterior.total); }
+    if (v && !v.noAplica) { poner(`${pre}-meta`, String(v.meta).replace('.', ',')); if (!v.pedagogico) poner(`${pre}-cobro`, String(Math.round(v.cobro))); }
+    else poner(`${pre}-cobro`, nuevo.cobro);
+  }
+  poner('#ps-estrato', estrato);
+  for (const [k, x] of Object.entries({ dias: nuevo.dias, kwh: nuevo.kwh, cu: nuevo.cu, total: nuevo.total, sub: nuevo.subsidio, cobro: nuevo.cobro })) poner(`#pb-${k}`, x);
+  if (anterior) for (const [k, x] of Object.entries(anterior)) poner(`#pa-${k}`, x);
+  $('#pb-estimado').checked = nuevo.estimado;
+  if (nuevo.deuda) { const r = document.querySelector(`input[name=pb-pago][value=${anterior && nuevo.deuda >= leerNumero(anterior.total, { min: 0, max: 2e8 }) ? 'no' : 'parte'}]`); if (r) { r.checked = true; } }
+  prepararCarta(true);
+}
+function instalarGuia() {
+  if (!$('#v-guia')) return;
+  document.querySelectorAll('#v-guia [data-essa]').forEach((b) => b.addEventListener('click', () => { if (b.dataset.essa === 'si') { $('#gu-essa').hidden = false; $('#gu-cuenta').focus(); } else { guia.essa = null; guiaIr(2); } }));
+  document.querySelectorAll('#v-guia [data-ir]').forEach((b) => b.addEventListener('click', () => guiaIr(Number(b.dataset.ir))));
+  document.querySelectorAll('#v-guia [data-sig]').forEach((b) => b.addEventListener('click', () => { if (avisoFaltan('#gn-err', faltanGuia('gn'))) guiaIr(Number(b.dataset.sig)); }));
+  document.querySelectorAll('#v-guia [data-ant]').forEach((b) => b.addEventListener('click', () => { guia.ant = b.dataset.ant === 'si'; if (guia.ant) { $('#gu-ant').hidden = false; $('#ga-dias').focus(); } else resultadoGuia(); }));
+  document.querySelectorAll('input[name=ga-pago]').forEach((x) => x.addEventListener('change', () => { $('#ga-parte-caja').hidden = document.querySelector('input[name=ga-pago]:checked')?.value !== 'parte'; }));
+  $('#gu-ver').addEventListener('click', resultadoGuia);
+  $('#gu-consultar').addEventListener('click', guiaConsultarEssa);
+  $('#gn-pdf').addEventListener('change', (ev) => guiaPdf('gn', ev));
+  $('#ga-pdf').addEventListener('change', (ev) => guiaPdf('ga', ev));
+  // Al abrir el detalle de la comparación desde el resultado, se calcula de una vez.
+  $('#gu-resultado').addEventListener('click', (ev) => { if (ev.target.closest('a[data-guia-ir="#subio"]') && val('#pa-total')) setTimeout(() => explicarRecibos(), 200); });
+  guiaIr(1);
 }
 
 // ---------------- Autorización antes de enviar un reporte ----------------
@@ -2963,7 +3298,8 @@ function abrirBienvenida() {
   focoPrevio = document.activeElement;
   v.hidden = false;
   document.body.classList.add('con-ventana');
-  setTimeout(() => { $('#bv-empezar')?.focus({ preventScroll: true }); v.scrollTop = 0; }, 0);
+  actualizarBotonesBienvenida();
+  setTimeout(() => { (bienvenidaAutorizada() ? $('#bv-empezar') : $('#bv-autorizo'))?.focus({ preventScroll: true }); v.scrollTop = 0; }, 0);
 }
 function cerrarBienvenida(destino) {
   const v = $('#bienvenida');
@@ -2973,19 +3309,33 @@ function cerrarBienvenida(destino) {
   if (destino) { try { history.replaceState(null, '', `#${destino}`); } catch { /* */ } mostrar(destino); }
   else if (focoPrevio && focoPrevio.focus) focoPrevio.focus();
 }
+// La autorización de tratamiento de datos es obligatoria para entrar: sin ella, la ventana no se cierra.
+const BOTONES_BIENVENIDA = ['#bv-empezar', '#bv-denunciar', '#bv-reportar'];
+function bienvenidaAutorizada() { return Boolean($('#bv-autorizo')?.checked); }
+function actualizarBotonesBienvenida() {
+  const ok = bienvenidaAutorizada();
+  for (const id of BOTONES_BIENVENIDA) { const b = $(id); if (b) { b.disabled = !ok; b.setAttribute('aria-describedby', 'bv-falta'); } }
+  const f = $('#bv-falta'); if (f && ok) f.classList.remove('alerta');
+}
+function pedirAutorizacionBienvenida() {
+  const f = $('#bv-falta'); if (f) { f.classList.remove('alerta'); void f.offsetWidth; f.classList.add('alerta'); }
+  $('#bv-autorizo')?.focus();
+}
+function cerrarSiAutorizada(destino) { if (bienvenidaAutorizada()) cerrarBienvenida(destino); else pedirAutorizacionBienvenida(); }
 function instalarBienvenida() {
-  $('#bv-autorizo')?.addEventListener('change', (e) => { estado.autorizoInicio = e.target.checked ? { fecha: new Date().toISOString(), version: '2026-11-03' } : null; });
-  $('#bv-empezar')?.addEventListener('click', () => cerrarBienvenida());
-  $('#bv-denunciar')?.addEventListener('click', () => cerrarBienvenida('revisar'));
-  $('#bv-reportar')?.addEventListener('click', () => cerrarBienvenida('reportar'));
+  $('#bv-autorizo')?.addEventListener('change', (e) => { estado.autorizoInicio = e.target.checked ? { fecha: new Date().toISOString(), version: '2026-11-03' } : null; actualizarBotonesBienvenida(); });
+  actualizarBotonesBienvenida();
+  $('#bv-empezar')?.addEventListener('click', () => cerrarSiAutorizada());
+  $('#bv-denunciar')?.addEventListener('click', () => cerrarSiAutorizada('guia'));
+  $('#bv-reportar')?.addEventListener('click', () => cerrarSiAutorizada('reportar'));
   $('#ver-bienvenida')?.addEventListener('click', abrirBienvenida);
-  $('#bienvenida')?.addEventListener('click', (ev) => { if (ev.target.id === 'bienvenida') cerrarBienvenida(); });
+  $('#bienvenida')?.addEventListener('click', (ev) => { if (ev.target.id === 'bienvenida') cerrarSiAutorizada(); });
   document.addEventListener('keydown', (ev) => {
     const v = $('#bienvenida');
     if (!v || v.hidden) return;
-    if (ev.key === 'Escape') { ev.preventDefault(); cerrarBienvenida(); return; }
+    if (ev.key === 'Escape') { ev.preventDefault(); cerrarSiAutorizada(); return; }
     if (ev.key === 'Tab') {
-      const f = [...v.querySelectorAll('a[href], button:not([disabled])')];
+      const f = [...v.querySelectorAll('a[href], button:not([disabled]), input, summary')];
       if (!f.length) return;
       if (ev.shiftKey && document.activeElement === f[0]) { ev.preventDefault(); f[f.length - 1].focus(); }
       else if (!ev.shiftKey && document.activeElement === f[f.length - 1]) { ev.preventDefault(); f[0].focus(); }
@@ -2998,6 +3348,7 @@ function instalarBienvenida() {
 // ---------------- Consulta de la meta en ESSA (con autorización previa) ----------------
 const VERSION_AUT_ESSA = 'consulta-essa-2026-11-03';
 let cuentaPendiente = null;
+let essaCtx = null; // destino de la consulta: null = «Revisar mi factura»; si no, el camino guiado
 let focoAntesAut = null;
 
 function abrirAutorizacion() {
@@ -3026,7 +3377,7 @@ function pedirConsultaEssa(ev) {
     return out.append(el('p', { class: 'error-campo' }, 'Escriba el número de cuenta tal como aparece en su recibo de ESSA, solo números (entre 5 y 12 cifras).'));
   }
   $('#q-cuenta').removeAttribute('aria-invalid');
-  cuentaPendiente = cuenta;
+  cuentaPendiente = cuenta; essaCtx = null;
   abrirAutorizacion();
 }
 
@@ -3035,12 +3386,14 @@ async function hacerConsultaEssa() {
   const cuenta = cuentaPendiente;
   $('#autorizacion-essa').hidden = true; document.body.classList.remove('con-ventana');
   cuentaPendiente = null;
-  const out = limpiar($('#essa-resultado'));
-  const boton = $('#q-consultar'); boton.disabled = true; boton.textContent = 'Consultando…';
+  const ctx = essaCtx; essaCtx = null;
+  const out = limpiar($(ctx ? ctx.out : '#essa-resultado'));
+  const boton = $(ctx ? ctx.boton : '#q-consultar'); const txtBoton = boton.textContent; boton.disabled = true; boton.textContent = 'Consultando…';
   out.append(el('p', {}, 'Consultando a ESSA…'));
   try {
     const r = await api('/consulta-essa', { method: 'POST', body: JSON.stringify({ cuenta, autorizaciones: { titular: true, tratamiento: true, origen: true, no_tramite: true }, version: VERSION_AUT_ESSA }) });
-    $('#q-cuenta').value = '';
+    $(ctx ? ctx.input : '#q-cuenta').value = '';
+    if (ctx) { limpiar(out); ctx.alResultado(r.datos || {}, out); return; }
     limpiar(out).append(lecturaEssa(r.datos || {}, r.consultado_en));
     out.querySelector('h4')?.focus?.();
   } catch (e) {
@@ -3049,7 +3402,7 @@ async function hacerConsultaEssa() {
     if (msg !== e.message) console.warn('[Luz Justa] El servicio rechazó la versión de la autorización', VERSION_AUT_ESSA, '— publique la versión nueva de Codigo.gs.');
     limpiar(out).append(el('div', { class: 'resumen-errores', role: 'alert' }, msg),
       el('p', { class: 'nota' }, 'Puede consultar directamente en la ', el('a', { href: 'https://www.essa.com.co/site/micrositios/Consulta_de_meta_de_consumo_de_energia.html', target: '_blank', rel: 'noopener' }, 'página de metas de ESSA'), '.'));
-  } finally { boton.disabled = false; boton.textContent = 'Consultar mi meta'; }
+  } finally { boton.disabled = false; boton.textContent = txtBoton; }
 }
 
 function lecturaEssa(d, consultado) {
@@ -3106,7 +3459,7 @@ function instalarConsultaEssa() {
   $('#form-essa')?.addEventListener('submit', pedirConsultaEssa);
   for (const id of ['#ae-titular', '#ae-tratamiento', '#ae-origen', '#ae-tramite']) $(id)?.addEventListener('change', () => { $('#ae-aceptar').disabled = !todasMarcadas(); if (todasMarcadas()) $('#ae-error').hidden = true; });
   $('#ae-aceptar')?.addEventListener('click', hacerConsultaEssa);
-  $('#ae-cancelar')?.addEventListener('click', () => { cerrarAutorizacion(); limpiar($('#essa-resultado')).append(el('p', { class: 'nota' }, 'Consulta cancelada. No se envió nada a ESSA.')); });
+  $('#ae-cancelar')?.addEventListener('click', () => { const destino = essaCtx ? essaCtx.out : '#essa-resultado'; essaCtx = null; cerrarAutorizacion(); limpiar($(destino)).append(el('p', { class: 'nota' }, 'Consulta cancelada. No se envió nada a ESSA.')); });
   document.addEventListener('keydown', (ev) => {
     const v = $('#autorizacion-essa');
     if (!v || v.hidden) return;
@@ -3274,6 +3627,7 @@ function iniciar() {
   instalarConsultaEssa();
   instalarAutorizacionReporte();
   instalarComparar();
+  instalarGuia();
   cargarMeta().catch(() => {});
   mostrar();
 }
