@@ -678,6 +678,21 @@ button.grande { font-size: 1.1rem; padding: 14px 18px; min-height: 54px; }
 }
 @media (prefers-reduced-motion: reduce) { .franja-protesta, .guia-detalle > summary::after { transition: none; } }
 .guia-medidor { text-align: center; margin: 4px 0 10px; } .guia-medidor .medidor { max-width: 200px; } .guia-medidor .resultado-pct { margin: 0; font-weight: 900; }
+/* ---------- Fotos reales del recibo ---------- */
+.recibo-real { margin: 8px 0 4px; }
+.recibo-real > img, .rr-atras img { display: block; width: 100%; max-width: 760px; height: auto; border-radius: 10px; border: 1px solid #d6dae4; box-shadow: 0 2px 10px rgba(0,0,0,.08); background: #fff; }
+.rr-atras img { max-width: 360px; margin-top: 8px; }
+.rr-leyenda { list-style: none; padding: 0; margin: 10px 0 6px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 6px 14px; font-size: .92rem; }
+.rr-leyenda li { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.mr-chip.rr-l { background: var(--morado); }
+.rr-atras { margin: 6px 0; }
+.rr-atras > summary { cursor: pointer; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.mapa-desplegable > summary { cursor: pointer; font-weight: 800; color: var(--morado); padding: 6px 0; }
+.dato-foto { margin: 4px 0 10px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.dato-foto img { width: 246px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #d6dae4; }
+.dato-foto figcaption { font-size: .92rem; min-width: 0; flex: 1 1 180px; }
+.bocadillo-foto { display: block; margin-top: 8px; max-width: 100%; width: auto; max-height: 220px; height: auto; border-radius: 8px; border: 1px solid #d6dae4; background: #fff; }
+.rr-leyenda .mr-chip, .rr-atras .mr-chip { flex: none; }
 
 /* Versión de consulta: márgenes seguros en teléfonos y avisos propios */
 main, .franja-int, .pie .int { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -723,7 +738,7 @@ html, body { background: #fff; color: var(--texto); }
   </defs>
 </svg>
 <a class="salto" href="#contenido">Saltar al contenido</a>
-<div class="aviso-consulta" id="aviso-consulta" role="note"><div class="int"><strong>Versión de consulta sin servidor</strong> (datos copiados el 7 de noviembre de 2026). Consejos, calculadoras, guía y carta de reclamo funcionan; los reportes enviados aquí no se guardan.</div></div>
+<div class="aviso-consulta" id="aviso-consulta" role="note"><div class="int"><strong>Versión de consulta sin servidor</strong> (datos copiados el 9 de noviembre de 2026). Consejos, calculadoras, guía y carta de reclamo funcionan; los reportes enviados aquí no se guardan.</div></div>
 
 <!-- ============ Ventana de bienvenida ============ -->
 <div id="bienvenida" class="velo" role="dialog" aria-modal="true" aria-labelledby="bv-titulo" hidden>
@@ -747,11 +762,7 @@ html, body { background: #fff; color: var(--texto); }
       <p>De conformidad con el artículo 15 de la Constitución Política, la Ley 1581 de 2012, el Decreto 1074 de 2015 y la Circular Externa No. 002 del 15 de enero de 2026 de la Superintendencia de Industria y Comercio, autorizo de manera libre, previa, expresa e informada a <strong>Laura Cristina Ahumada García, Senadora de la República</strong>, en calidad de responsable del tratamiento, para recolectar, almacenar, consultar, utilizar, actualizar, conservar y tratar mis datos personales y la información que voluntariamente suministre, con las siguientes finalidades: recibir, documentar, analizar y hacer seguimiento a reportes relacionados con la facturación y prestación de servicios públicos domiciliarios; contactarme y brindarme orientación sobre mis derechos como usuario; remitir, cuando corresponda, la información estrictamente necesaria a las empresas prestadoras y autoridades competentes para la gestión de mi caso; elaborar estudios e informes estadísticos; e informarme e invitarme a futuros proyectos, jornadas, consultas ciudadanas y actividades de defensa de derechos, protección de usuarios, representación social y participación ciudadana. Asimismo, autorizo el envío de comunicaciones relacionadas con la gestión institucional, iniciativas, propuestas y actividades políticas o electorales de la Senadora, a través de correo electrónico, llamadas, mensajes SMS, WhatsApp, listas de difusión y grupos de mensajería, comprendiendo que en estos últimos otros integrantes podrían visualizar mi número o información de perfil.</p>
       <p>La información de mis reportes, facturas y documentos adjuntos no será reutilizada para finalidades distintas sin la correspondiente habilitación legal o autorización. No se utilizarán mis datos para inferir o elaborar perfiles sobre mi orientación política sin la autorización específica exigida por la ley. Declaro conocer que puedo ejercer mis derechos de acceso, actualización, rectificación, supresión y revocatoria de la autorización, mediante los canales establecidos en la Política de Tratamiento de Datos Personales, disponible para consulta en la plataforma. Esta autorización no constituye por sí misma poder o mandato para actuar jurídicamente en mi nombre, ni implica afiliación partidista, adhesión política u obligación de respaldo electoral.</p>
 </div></details>
-      <p class="nota bv-falta" id="bv-falta">Para entrar al sitio, marque la casilla de autorización.</p>
-    </div>
-    <div class="acciones">
-      <button type="button" class="grande" id="bv-denunciar"><svg class="ico" aria-hidden="true"><use href="#i-lupa"/></svg> Revise su recibo</button>
-      <button type="button" class="grande morado" id="bv-reportar"><svg class="ico" aria-hidden="true"><use href="#i-megafono"/></svg> Repórtenos su factura</button>
+      <p class="nota bv-falta" id="bv-falta">Marque la casilla de autorización y entrará al sitio.</p>
     </div>
     <p class="nota">Una iniciativa de la Senadora Laura Ahumada.</p>
     <p class="aviso-legal">Herramienta informativa de la Senadora Laura Cristina Ahumada García, responsable del tratamiento de datos. No es ESSA, la CREG, la Superintendencia de Servicios Públicos ni ninguna autoridad: no presta el servicio, no factura, no decide reclamos ni radica trámites a su nombre. Los cálculos y la información de terceros (como ESSA) son orientativos y no reemplazan su factura, el cálculo oficial de la empresa ni la asesoría jurídica. Los datos que usted entregue son voluntarios y se tratan conforme a la Ley 1581 de 2012, el Decreto 1074 de 2015 y la <a href="politica-tratamiento-datos.pdf" target="_blank" rel="noopener">Política de Tratamiento de Datos Personales</a>. Puede conocer, actualizar o suprimir sus datos escribiendo a <span data-canal-privacidad>laura.ahumada@senado.gov.co</span>.</p>
@@ -967,6 +978,7 @@ html, body { background: #fff; color: var(--texto); }
     <div class="guia-botones"><button type="button" class="grande" data-essa="si">Sí, es de ESSA</button><button type="button" class="grande secundario" data-essa="no">No / No sé</button></div>
     <div id="gu-essa" hidden>
       <p>Escriba el <strong>número de cuenta</strong> (arriba a la derecha del recibo). Traemos su meta del «Plan Energía YA». <svg class="ico-mini" aria-hidden="true"><use href="#i-candado"/></svg> No guardamos el número: solo lo recordamos mientras tenga abierta esta página.</p>
+      <figure class="dato-foto"><img src="recibo-dato-cuenta.webp" width="246" height="133" alt="Dónde está el número de cuenta: arriba a la derecha del recibo, en la franja azul, junto al código QR."><figcaption>Su número de cuenta está arriba a la derecha, en la franja azul.</figcaption></figure>
       <div class="fila-cuenta"><div class="campo"><label for="gu-cuenta">Número de cuenta ESSA</label><input id="gu-cuenta" type="text" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="Ej.: 1234567"></div><div class="acciones"><button type="button" id="gu-consultar">Traer mi meta</button></div></div>
       <div id="gu-essa-res" aria-live="polite"></div>
       <p class="nota"><button type="button" class="enlace-boton" data-ir="2">Seguir sin consultar la meta</button></p>
@@ -976,28 +988,22 @@ html, body { background: #fff; color: var(--texto); }
   <section class="paso-tarjeta guia-paso" data-paso="2" aria-labelledby="gp2" hidden>
     <h3 id="gp2" tabindex="-1"><span class="paso-num">2</span> Los datos de este recibo</h3>
     <div class="guia-pdf"><label class="boton secundario" for="gn-pdf"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg> Subir el recibo digital (PDF)</label><input id="gn-pdf" class="sr-solo" type="file" accept="application/pdf,.pdf"><span class="nota">O escriba los 4 datos. El PDF se lee en su celular y no se envía.</span><div id="gn-pdf-res" aria-live="polite"></div></div>
-    <figure class="mapa-recibo">
-      <svg viewBox="0 0 360 230" role="img" aria-labelledby="mr-tit" xmlns="http://www.w3.org/2000/svg">
-        <title id="mr-tit">Dónde están los 4 datos en el recibo: 1 días de consumo y 2 consumo en los círculos del centro; 3 valor del kWh al final del cuadro de componentes de costo; 4 valor total a pagar abajo a la derecha.</title>
-        <rect x="4" y="4" width="352" height="222" rx="10" class="mr-papel"/>
-        <rect x="4" y="4" width="352" height="26" rx="10" class="mr-franja"/><text x="16" y="22" class="mr-t mr-blanco">Su recibo de energía</text>
-        <rect x="14" y="40" width="90" height="74" rx="6" class="mr-caja"/><text x="20" y="54" class="mr-p">Datos del medidor</text>
-        <rect x="20" y="60" width="78" height="5" class="mr-linea"/><rect x="20" y="70" width="64" height="5" class="mr-linea"/><rect x="20" y="80" width="72" height="5" class="mr-linea"/><rect x="20" y="90" width="58" height="5" class="mr-linea"/>
-        <rect x="114" y="40" width="130" height="78" rx="6" class="mr-caja"/><text x="120" y="54" class="mr-p">Componentes de costo (CU)</text>
-        <rect x="120" y="60" width="110" height="5" class="mr-linea"/><rect x="120" y="70" width="100" height="5" class="mr-linea"/><rect x="120" y="80" width="106" height="5" class="mr-linea"/>
-        <rect x="118" y="92" width="122" height="20" rx="4" class="mr-marca"/><text x="122" y="105" class="mr-p mr-fuerte">G+T+D+Cv+PR+R=CUv: 973,45</text>
-        <circle cx="140" cy="146" r="16" class="mr-burbuja"/><text x="140" y="151" class="mr-n" text-anchor="middle">31</text><text x="140" y="172" class="mr-p" text-anchor="middle">Días de consumo</text>
-        <circle cx="200" cy="146" r="16" class="mr-burbuja mr-amarilla"/><text x="200" y="149" class="mr-n" text-anchor="middle">187</text><text x="200" y="157" class="mr-p" text-anchor="middle">kWh</text><text x="200" y="172" class="mr-p" text-anchor="middle">Consumo</text>
-        <rect x="254" y="40" width="94" height="96" rx="6" class="mr-caja"/><text x="260" y="54" class="mr-p">Liquidación</text>
-        <rect x="260" y="60" width="80" height="5" class="mr-linea"/><rect x="260" y="70" width="70" height="5" class="mr-linea"/><rect x="260" y="80" width="76" height="5" class="mr-linea"/>
-        <rect x="248" y="186" width="100" height="30" rx="5" class="mr-marca"/><text x="298" y="200" class="mr-n" text-anchor="middle">$398.743</text><text x="298" y="211" class="mr-p" text-anchor="middle">Valor total a pagar</text>
-        <g class="mr-num"><circle cx="118" cy="132" r="9"/><text x="118" y="136" text-anchor="middle">1</text></g>
-        <g class="mr-num"><circle cx="222" cy="132" r="9"/><text x="222" y="136" text-anchor="middle">2</text></g>
-        <g class="mr-num"><circle cx="244" cy="92" r="9"/><text x="244" y="96" text-anchor="middle">3</text></g>
-        <g class="mr-num"><circle cx="244" cy="188" r="9"/><text x="244" y="192" text-anchor="middle">4</text></g>
-      </svg>
-      <figcaption><b>1</b> Días de consumo · <b>2</b> Consumo (kWh) · <b>3</b> Valor del kWh (CUv) · <b>4</b> Valor total a pagar. <span class="nota">Dibujo de ejemplo, con cifras de muestra.</span></figcaption>
-    </figure>
+    <details class="mapa-desplegable" open><summary>¿Dónde encuentro estos datos en mi recibo?</summary>
+      <figure class="recibo-real">
+        <img src="recibo-cara1.webp" width="1155" height="1105" loading="lazy" alt="Recibo real de ESSA con los datos señalados: 1 días de consumo, 2 consumo en kWh, 3 valor del kWh, 4 valor total a pagar, A estrato, B generación, C consumo de meses anteriores, D número de cuenta, F lo que le ahorra el subsidio y G cobro adicional del plan. El nombre, el documento, la dirección, el número de cuenta y los códigos de barras están tapados.">
+        <figcaption>
+          <ol class="rr-leyenda">
+            <li><b class="mr-chip">1</b> Días de consumo</li><li><b class="mr-chip">2</b> Consumo en kWh</li><li><b class="mr-chip">3</b> Valor del kWh (CUv)</li><li><b class="mr-chip">4</b> Valor total a pagar</li>
+            <li><b class="mr-chip rr-l">A</b> Estrato</li><li><b class="mr-chip rr-l">B</b> Generación (G)</li><li><b class="mr-chip rr-l">C</b> Consumo de meses anteriores</li><li><b class="mr-chip rr-l">D</b> Número de cuenta</li>
+            <li><b class="mr-chip rr-l">F</b> Lo que le ahorra el subsidio</li><li><b class="mr-chip rr-l">G</b> Cobro adicional del plan («Cobro Adici. Creg 101 120»)</li>
+          </ol>
+          <details class="rr-atras"><summary><b class="mr-chip rr-l">E</b> El periodo (fechas) está en la parte de atrás del recibo</summary>
+            <img src="recibo-cara2.webp" width="705" height="1095" loading="lazy" alt="Parte de atrás de un recibo de ESSA: 4 valor total a pagar y E periodo facturado (de una fecha a otra). El número de documento está tapado.">
+          </details>
+          <p class="nota"><strong>Toque el «?» junto a cada dato para verlo de cerca.</strong> Fotos de recibos reales de ESSA. Tapamos el nombre, el documento, la dirección, el número de cuenta y los códigos de barras.</p>
+        </figcaption>
+      </figure>
+    </details>
     <div class="fila-2 guia-campos">
         <div class="campo"><label for="gn-dias"><b class="mr-chip">1</b> Días de consumo *</label><input id="gn-dias" type="number" inputmode="numeric" min="1" max="62" placeholder="Ej.: 30"></div>
         <div class="campo"><label for="gn-kwh"><b class="mr-chip">2</b> Consumo en kWh *</label><input id="gn-kwh" type="text" inputmode="decimal" placeholder="Ej.: 187"></div>
@@ -1024,6 +1030,22 @@ html, body { background: #fff; color: var(--texto); }
     <div class="guia-botones"><button type="button" class="grande" data-ant="si">Sí, lo tengo</button><button type="button" class="grande secundario" data-ant="no">No lo tengo</button></div>
     <div id="gu-ant" hidden>
       <div class="guia-pdf"><label class="boton secundario" for="ga-pdf"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg> Subir el recibo digital (PDF)</label><input id="ga-pdf" class="sr-solo" type="file" accept="application/pdf,.pdf"><span class="nota">O escriba los 4 datos. El PDF se lee en su celular y no se envía.</span><div id="ga-pdf-res" aria-live="polite"></div></div>
+      <details class="mapa-desplegable"><summary>¿Dónde están en el recibo anterior? Igual que en el nuevo</summary>
+      <figure class="recibo-real">
+        <img src="recibo-cara1.webp" width="1155" height="1105" loading="lazy" alt="Recibo real de ESSA con los datos señalados: 1 días de consumo, 2 consumo en kWh, 3 valor del kWh, 4 valor total a pagar, A estrato, B generación, C consumo de meses anteriores, D número de cuenta, F lo que le ahorra el subsidio y G cobro adicional del plan. El nombre, el documento, la dirección, el número de cuenta y los códigos de barras están tapados.">
+        <figcaption>
+          <ol class="rr-leyenda">
+            <li><b class="mr-chip">1</b> Días de consumo</li><li><b class="mr-chip">2</b> Consumo en kWh</li><li><b class="mr-chip">3</b> Valor del kWh (CUv)</li><li><b class="mr-chip">4</b> Valor total a pagar</li>
+            <li><b class="mr-chip rr-l">A</b> Estrato</li><li><b class="mr-chip rr-l">B</b> Generación (G)</li><li><b class="mr-chip rr-l">C</b> Consumo de meses anteriores</li><li><b class="mr-chip rr-l">D</b> Número de cuenta</li>
+            <li><b class="mr-chip rr-l">F</b> Lo que le ahorra el subsidio</li><li><b class="mr-chip rr-l">G</b> Cobro adicional del plan («Cobro Adici. Creg 101 120»)</li>
+          </ol>
+          <details class="rr-atras"><summary><b class="mr-chip rr-l">E</b> El periodo (fechas) está en la parte de atrás del recibo</summary>
+            <img src="recibo-cara2.webp" width="705" height="1095" loading="lazy" alt="Parte de atrás de un recibo de ESSA: 4 valor total a pagar y E periodo facturado (de una fecha a otra). El número de documento está tapado.">
+          </details>
+          <p class="nota"><strong>Toque el «?» junto a cada dato para verlo de cerca.</strong> Fotos de recibos reales de ESSA. Tapamos el nombre, el documento, la dirección, el número de cuenta y los códigos de barras.</p>
+        </figcaption>
+      </figure>
+    </details>
       <div class="fila-2 guia-campos">
         <div class="campo"><label for="ga-dias"><b class="mr-chip">1</b> Días de consumo *</label><input id="ga-dias" type="number" inputmode="numeric" min="1" max="62" placeholder="Ej.: 30"></div>
         <div class="campo"><label for="ga-kwh"><b class="mr-chip">2</b> Consumo en kWh *</label><input id="ga-kwh" type="text" inputmode="decimal" placeholder="Ej.: 187"></div>
@@ -1055,28 +1077,22 @@ html, body { background: #fff; color: var(--texto); }
   <section id="por-que-subio" class="paso-tarjeta" aria-labelledby="ps-titulo">
     <div class="paso-cab"><svg class="ico-paso" aria-hidden="true"><use href="#i-pesos"/></svg><h3 id="ps-titulo">Compare su recibo anterior con el nuevo</h3></div>
     <p>Tenga a la mano <strong>su recibo anterior y el nuevo</strong>. Copie de cada uno estos datos y le decimos cuánto de la subida es por el <strong>precio del kWh</strong>, por los <strong>días cobrados</strong>, por <strong>su consumo</strong>, por el <strong>subsidio</strong>, por el <strong>cobro del plan</strong> o por <strong>deudas</strong>. <svg class="ico-mini" aria-hidden="true"><use href="#i-candado"/></svg> Esto se calcula en su celular: no se envía ni se guarda.</p>
-    <details class="mapa-desplegable"><summary>¿Dónde encuentro estos datos en mi recibo?</summary><figure class="mapa-recibo">
-      <svg viewBox="0 0 360 230" role="img" aria-labelledby="mr-tit2" xmlns="http://www.w3.org/2000/svg">
-        <title id="mr-tit2">Dónde están los 4 datos en el recibo: 1 días de consumo y 2 consumo en los círculos del centro; 3 valor del kWh al final del cuadro de componentes de costo; 4 valor total a pagar abajo a la derecha.</title>
-        <rect x="4" y="4" width="352" height="222" rx="10" class="mr-papel"/>
-        <rect x="4" y="4" width="352" height="26" rx="10" class="mr-franja"/><text x="16" y="22" class="mr-t mr-blanco">Su recibo de energía</text>
-        <rect x="14" y="40" width="90" height="74" rx="6" class="mr-caja"/><text x="20" y="54" class="mr-p">Datos del medidor</text>
-        <rect x="20" y="60" width="78" height="5" class="mr-linea"/><rect x="20" y="70" width="64" height="5" class="mr-linea"/><rect x="20" y="80" width="72" height="5" class="mr-linea"/><rect x="20" y="90" width="58" height="5" class="mr-linea"/>
-        <rect x="114" y="40" width="130" height="78" rx="6" class="mr-caja"/><text x="120" y="54" class="mr-p">Componentes de costo (CU)</text>
-        <rect x="120" y="60" width="110" height="5" class="mr-linea"/><rect x="120" y="70" width="100" height="5" class="mr-linea"/><rect x="120" y="80" width="106" height="5" class="mr-linea"/>
-        <rect x="118" y="92" width="122" height="20" rx="4" class="mr-marca"/><text x="122" y="105" class="mr-p mr-fuerte">G+T+D+Cv+PR+R=CUv: 973,45</text>
-        <circle cx="140" cy="146" r="16" class="mr-burbuja"/><text x="140" y="151" class="mr-n" text-anchor="middle">31</text><text x="140" y="172" class="mr-p" text-anchor="middle">Días de consumo</text>
-        <circle cx="200" cy="146" r="16" class="mr-burbuja mr-amarilla"/><text x="200" y="149" class="mr-n" text-anchor="middle">187</text><text x="200" y="157" class="mr-p" text-anchor="middle">kWh</text><text x="200" y="172" class="mr-p" text-anchor="middle">Consumo</text>
-        <rect x="254" y="40" width="94" height="96" rx="6" class="mr-caja"/><text x="260" y="54" class="mr-p">Liquidación</text>
-        <rect x="260" y="60" width="80" height="5" class="mr-linea"/><rect x="260" y="70" width="70" height="5" class="mr-linea"/><rect x="260" y="80" width="76" height="5" class="mr-linea"/>
-        <rect x="248" y="186" width="100" height="30" rx="5" class="mr-marca"/><text x="298" y="200" class="mr-n" text-anchor="middle">$398.743</text><text x="298" y="211" class="mr-p" text-anchor="middle">Valor total a pagar</text>
-        <g class="mr-num"><circle cx="118" cy="132" r="9"/><text x="118" y="136" text-anchor="middle">1</text></g>
-        <g class="mr-num"><circle cx="222" cy="132" r="9"/><text x="222" y="136" text-anchor="middle">2</text></g>
-        <g class="mr-num"><circle cx="244" cy="92" r="9"/><text x="244" y="96" text-anchor="middle">3</text></g>
-        <g class="mr-num"><circle cx="244" cy="188" r="9"/><text x="244" y="192" text-anchor="middle">4</text></g>
-      </svg>
-      <figcaption><b>1</b> Días de consumo · <b>2</b> Consumo (kWh) · <b>3</b> Valor del kWh (CUv) · <b>4</b> Valor total a pagar. <span class="nota">Dibujo de ejemplo, con cifras de muestra.</span></figcaption>
-    </figure></details>
+    <details class="mapa-desplegable"><summary>¿Dónde encuentro estos datos en mi recibo?</summary>
+      <figure class="recibo-real">
+        <img src="recibo-cara1.webp" width="1155" height="1105" loading="lazy" alt="Recibo real de ESSA con los datos señalados: 1 días de consumo, 2 consumo en kWh, 3 valor del kWh, 4 valor total a pagar, A estrato, B generación, C consumo de meses anteriores, D número de cuenta, F lo que le ahorra el subsidio y G cobro adicional del plan. El nombre, el documento, la dirección, el número de cuenta y los códigos de barras están tapados.">
+        <figcaption>
+          <ol class="rr-leyenda">
+            <li><b class="mr-chip">1</b> Días de consumo</li><li><b class="mr-chip">2</b> Consumo en kWh</li><li><b class="mr-chip">3</b> Valor del kWh (CUv)</li><li><b class="mr-chip">4</b> Valor total a pagar</li>
+            <li><b class="mr-chip rr-l">A</b> Estrato</li><li><b class="mr-chip rr-l">B</b> Generación (G)</li><li><b class="mr-chip rr-l">C</b> Consumo de meses anteriores</li><li><b class="mr-chip rr-l">D</b> Número de cuenta</li>
+            <li><b class="mr-chip rr-l">F</b> Lo que le ahorra el subsidio</li><li><b class="mr-chip rr-l">G</b> Cobro adicional del plan («Cobro Adici. Creg 101 120»)</li>
+          </ol>
+          <details class="rr-atras"><summary><b class="mr-chip rr-l">E</b> El periodo (fechas) está en la parte de atrás del recibo</summary>
+            <img src="recibo-cara2.webp" width="705" height="1095" loading="lazy" alt="Parte de atrás de un recibo de ESSA: 4 valor total a pagar y E periodo facturado (de una fecha a otra). El número de documento está tapado.">
+          </details>
+          <p class="nota"><strong>Toque el «?» junto a cada dato para verlo de cerca.</strong> Fotos de recibos reales de ESSA. Tapamos el nombre, el documento, la dirección, el número de cuenta y los códigos de barras.</p>
+        </figcaption>
+      </figure>
+    </details>
     <p class="leyenda-obligatorios"><span class="ast">*</span> Obligatorio: 4 datos de cada recibo. Lo demás es opcional, pero ayuda a explicar mejor.</p>
     <div class="cargar-pdf">
       <p class="cargar-pdf-tit"><svg class="ico-mini" aria-hidden="true"><use href="#i-recibo"/></svg> <strong>¿Tiene sus recibos digitales en PDF?</strong> Súbalos (2 o 3) y llenamos los datos por usted.</p>
@@ -1131,6 +1147,22 @@ html, body { background: #fff; color: var(--texto); }
     <div id="g-errores" class="resumen-errores" tabindex="-1" hidden></div>
     <section class="paso-tarjeta" aria-labelledby="g1-titulo">
       <div class="paso-cab"><span class="paso-num">1</span><svg class="ico-paso" aria-hidden="true"><use href="#i-recibo"/></svg><h3 id="g1-titulo">Los datos de su recibo</h3></div>
+      <details class="mapa-desplegable"><summary>¿Dónde encuentro estos datos en mi recibo?</summary>
+      <figure class="recibo-real">
+        <img src="recibo-cara1.webp" width="1155" height="1105" loading="lazy" alt="Recibo real de ESSA con los datos señalados: 1 días de consumo, 2 consumo en kWh, 3 valor del kWh, 4 valor total a pagar, A estrato, B generación, C consumo de meses anteriores, D número de cuenta, F lo que le ahorra el subsidio y G cobro adicional del plan. El nombre, el documento, la dirección, el número de cuenta y los códigos de barras están tapados.">
+        <figcaption>
+          <ol class="rr-leyenda">
+            <li><b class="mr-chip">1</b> Días de consumo</li><li><b class="mr-chip">2</b> Consumo en kWh</li><li><b class="mr-chip">3</b> Valor del kWh (CUv)</li><li><b class="mr-chip">4</b> Valor total a pagar</li>
+            <li><b class="mr-chip rr-l">A</b> Estrato</li><li><b class="mr-chip rr-l">B</b> Generación (G)</li><li><b class="mr-chip rr-l">C</b> Consumo de meses anteriores</li><li><b class="mr-chip rr-l">D</b> Número de cuenta</li>
+            <li><b class="mr-chip rr-l">F</b> Lo que le ahorra el subsidio</li><li><b class="mr-chip rr-l">G</b> Cobro adicional del plan («Cobro Adici. Creg 101 120»)</li>
+          </ol>
+          <details class="rr-atras"><summary><b class="mr-chip rr-l">E</b> El periodo (fechas) está en la parte de atrás del recibo</summary>
+            <img src="recibo-cara2.webp" width="705" height="1095" loading="lazy" alt="Parte de atrás de un recibo de ESSA: 4 valor total a pagar y E periodo facturado (de una fecha a otra). El número de documento está tapado.">
+          </details>
+          <p class="nota"><strong>Toque el «?» junto a cada dato para verlo de cerca.</strong> Fotos de recibos reales de ESSA. Tapamos el nombre, el documento, la dirección, el número de cuenta y los códigos de barras.</p>
+        </figcaption>
+      </figure>
+    </details>
       <fieldset class="grupo"><legend><svg class="ico-mini" aria-hidden="true"><use href="#i-casa"/></svg> Lo básico</legend>
       <div class="fila-2">
         <div class="campo"><label for="g-municipio">Municipio *</label><select id="g-municipio" name="municipio_id" required></select></div>
@@ -1244,6 +1276,7 @@ html, body { background: #fff; color: var(--texto); }
 
 </main>
 
+<div id="fotos-dato" hidden><img data-dato="dias" src="recibo-dato-dias.webp" alt=""><img data-dato="consumo" src="recibo-dato-consumo.webp" alt=""><img data-dato="valor-kwh" src="recibo-dato-valor-kwh.webp" alt=""><img data-dato="total" src="recibo-dato-total.webp" alt=""><img data-dato="estrato" src="recibo-dato-estrato.webp" alt=""><img data-dato="generacion" src="recibo-dato-generacion.webp" alt=""><img data-dato="historico" src="recibo-dato-historico.webp" alt=""><img data-dato="subsidio" src="recibo-dato-subsidio.webp" alt=""><img data-dato="cobro" src="recibo-dato-cobro.webp" alt=""><img data-dato="periodo" src="recibo-dato-periodo.webp" alt=""><img data-dato="cuenta" src="recibo-dato-cuenta.webp" alt=""></div>
 <aside class="franja-protesta" aria-label="Campaña contra el plan Energía YA">
   <p><strong>NO al plan «Energía YA»</strong> <span class="fp-sub">· La luz no es un lujo en el Magdalena Medio</span></p>
   <a href="#guia" class="fp-boton">Revisar mi recibo</a>
@@ -3464,10 +3497,22 @@ const AYUDAS = {
   'd-hechos': 'Cuente qué pasó, con fechas y valores. Ej.: «Me cobraron 320 kWh y el medidor marca 210».',
 };
 let contadorAyuda = 0;
-function ponerAyuda(dondeVa, texto, id) {
+// Foto real del recibo que acompaña la ayuda de cada campo (las fotos están en #fotos-dato, con los datos personales tapados).
+const FOTO_POR_CAMPO = { dias: 'dias', kwh: 'consumo', consumo: 'consumo', cu: 'valor-kwh', tarifa: 'valor-kwh', total: 'total', valor: 'total', estrato: 'estrato', g: 'generacion', sub: 'subsidio', cobro: 'cobro', 'consumo-ant': 'historico', periodo: 'periodo', cuenta: 'cuenta' };
+function fotoDeCampo(id) {
+  const clave = FOTO_POR_CAMPO[String(id).replace(/^(gn|ga|pa|pb|ps|gu|g|r|q)-/, '')];
+  const img = clave && document.querySelector(`#fotos-dato img[data-dato="${clave}"]`);
+  if (!img) return null;
+  const copia = img.cloneNode(); copia.removeAttribute('data-orig'); copia.removeAttribute('data-mismo'); copia.src = img.currentSrc || img.src;
+  copia.alt = 'Foto de un recibo real de ESSA: el recuadro fucsia muestra dónde está este dato.'; copia.className = 'bocadillo-foto'; copia.loading = 'lazy';
+  return copia;
+}
+function ponerAyuda(dondeVa, texto, id, campoId) {
   const idB = id || `ayuda-${++contadorAyuda}`;
   const boton = el('button', { type: 'button', class: 'ayuda-btn', 'aria-expanded': 'false', 'aria-controls': idB, 'aria-label': 'Ayuda: ¿qué es esto?', title: '¿Qué es esto?' }, '?');
   const globo = el('span', { class: 'bocadillo', id: idB, role: 'note', hidden: true }, texto);
+  const foto = campoId ? fotoDeCampo(campoId) : null;
+  if (foto) globo.append(foto);
   dondeVa.after(boton);
   boton.after(globo);
   return boton;
@@ -3482,6 +3527,10 @@ for (const p of ['pa', 'pb']) Object.assign(AYUDAS, {
   [`${p}-sub`]: 'Opcional. En «Liquidación Bienes, Servicios…», la línea «Subsidio» (aparece con signo menos). Estratos 4, 5, 6 y comercios no tienen.',
   [`${p}-cobro`]: 'Opcional. En «Liquidación…», la línea «Cobro Adici. Creg 101 120 2026». Si aparece sin valor, déjelo vacío.',
 });
+// El camino guiado usa las mismas ayudas (paso 2: recibo nuevo; paso 3: recibo anterior).
+for (const p of ['gn', 'ga']) for (const k of ['dias', 'kwh', 'cu', 'total']) AYUDAS[`${p}-${k}`] = AYUDAS[`pa-${k}`];
+Object.assign(AYUDAS, { 'gn-sub': AYUDAS['pa-sub'], 'gn-cobro': AYUDAS['pa-cobro'], 'gn-estrato': 'El estrato del recibo, en «Datos Técnicos y Calidad del Servicio», línea «Estrato/Nivel» (el primer número).',
+  'gu-cuenta': 'Arriba a la derecha del recibo, en la franja azul: «Número de cuenta». Solo los números.' });
 AYUDAS['ps-estrato'] = 'El estrato del recibo («Estrato/Nivel»). Sirve para saber si tiene subsidio.';
 
 // Los campos de «Repórtenos su factura» usan las mismas ayudas que los de «Revisar».
@@ -3501,7 +3550,7 @@ function instalarAyudas() {
     if (!destino) continue;
     if (destino.tagName === 'LEGEND') { destino.append(' '); const sp = el('span', { class: 'ayuda-en-leyenda' }); destino.append(sp); ponerAyuda(sp, texto, `ay-${id}`); }
     else if (campo.type === 'checkbox') { ponerAyuda(destino, texto, `ay-${id}`); }
-    else { ponerAyuda(destino, texto, `ay-${id}`); }
+    else { ponerAyuda(destino, texto, `ay-${id}`, id); }
   }
 }
 document.addEventListener('click', (ev) => {
@@ -3527,7 +3576,7 @@ function abrirBienvenida() {
   v.hidden = false;
   document.body.classList.add('con-ventana');
   actualizarBotonesBienvenida();
-  setTimeout(() => { (bienvenidaAutorizada() ? $('#bv-denunciar') : $('#bv-autorizo'))?.focus({ preventScroll: true }); v.scrollTop = 0; }, 0);
+  setTimeout(() => { $('#bv-autorizo')?.focus({ preventScroll: true }); v.scrollTop = 0; }, 0);
 }
 function cerrarBienvenida(destino) {
   const v = $('#bienvenida');
@@ -3538,7 +3587,8 @@ function cerrarBienvenida(destino) {
   else if (focoPrevio && focoPrevio.focus) focoPrevio.focus();
 }
 // La autorización de tratamiento de datos es obligatoria para entrar: sin ella, la ventana no se cierra.
-const BOTONES_BIENVENIDA = ['#bv-denunciar', '#bv-reportar'];
+// Al marcar la casilla, la ventana se cierra sola y lleva al inicio.
+const BOTONES_BIENVENIDA = [];
 function bienvenidaAutorizada() { return Boolean($('#bv-autorizo')?.checked); }
 function actualizarBotonesBienvenida() {
   const ok = bienvenidaAutorizada();
@@ -3551,11 +3601,10 @@ function pedirAutorizacionBienvenida() {
 }
 function cerrarSiAutorizada(destino) { if (bienvenidaAutorizada()) cerrarBienvenida(destino); else pedirAutorizacionBienvenida(); }
 function instalarBienvenida() {
-  $('#bv-autorizo')?.addEventListener('change', (e) => { estado.autorizoInicio = e.target.checked ? { fecha: new Date().toISOString(), version: '2026-11-03' } : null; actualizarBotonesBienvenida(); });
+  $('#bv-autorizo')?.addEventListener('change', (e) => { estado.autorizoInicio = e.target.checked ? { fecha: new Date().toISOString(), version: '2026-11-03' } : null; actualizarBotonesBienvenida();
+    if (e.target.checked) setTimeout(() => { if (bienvenidaAutorizada()) cerrarBienvenida('inicio'); }, 500); });
   actualizarBotonesBienvenida();
   $('#bv-empezar')?.addEventListener('click', () => cerrarSiAutorizada());
-  $('#bv-denunciar')?.addEventListener('click', () => cerrarSiAutorizada('guia'));
-  $('#bv-reportar')?.addEventListener('click', () => cerrarSiAutorizada('reportar'));
   $('#ver-bienvenida')?.addEventListener('click', abrirBienvenida);
   $('#bienvenida')?.addEventListener('click', (ev) => { if (ev.target.id === 'bienvenida') cerrarSiAutorizada(); });
   document.addEventListener('keydown', (ev) => {
