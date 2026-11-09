@@ -971,7 +971,7 @@ html, body { background: #fff; color: var(--texto); }
 <!-- =============== REVISAR MI RECIBO EN 3 PASOS (camino guiado) =============== -->
 <section id="v-guia" class="vista" data-vista="guia" hidden>
   <div class="cabeza-seccion hero hero-recorte"><img class="hero-nitida" src="luz-justa-banner.webp" srcset="luz-justa-banner-1200.webp 1200w, luz-justa-banner.webp 2400w" sizes="(max-width: 640px) 100vw, 1168px" width="2400" height="888" alt="Luz Justa · Senadora Laura Ahumada"><div class="hero-txt"><h2>Revisar mi factura</h2><p>Le decimos si le cobran de más, por qué subió y qué hacer. Tenga a la mano su recibo.</p></div></div>
-  <ol class="guia-progreso" aria-label="Pasos"><li data-p="1">Su meta</li><li data-p="2">Este recibo</li><li data-p="3">El anterior</li><li data-p="4">Resultado</li></ol>
+  <ol class="guia-progreso" aria-label="Pasos"><li data-p="1">Su meta</li><li data-p="2">Último recibo</li><li data-p="3">El anterior</li><li data-p="4">Resultado</li></ol>
 
   <section class="paso-tarjeta guia-paso" data-paso="1" aria-labelledby="gp1">
     <h3 id="gp1" tabindex="-1"><span class="paso-num">1</span> ¿Su recibo de la luz es de ESSA?</h3>
@@ -986,8 +986,9 @@ html, body { background: #fff; color: var(--texto); }
   </section>
 
   <section class="paso-tarjeta guia-paso" data-paso="2" aria-labelledby="gp2" hidden>
-    <h3 id="gp2" tabindex="-1"><span class="paso-num">2</span> Los datos de este recibo</h3>
-    <div class="guia-pdf"><label class="boton secundario" for="gn-pdf"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg> Subir el recibo digital (PDF)</label><input id="gn-pdf" class="sr-solo" type="file" accept="application/pdf,.pdf"><span class="nota">O escriba los 4 datos. El PDF se lee en su celular y no se envía.</span><div id="gn-pdf-res" aria-live="polite"></div></div>
+    <h3 id="gp2" tabindex="-1"><span class="paso-num">2</span> Los datos de su último recibo</h3>
+    <p class="nota">El más reciente que le llegó (el de este mes).</p>
+    <div class="guia-pdf"><label class="boton secundario" for="gn-pdf"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg> Subir el último recibo digital (PDF)</label><input id="gn-pdf" class="sr-solo" type="file" accept="application/pdf,.pdf"><span class="nota">O escriba los 4 datos. El PDF se lee en su celular y no se envía.</span><div id="gn-pdf-res" aria-live="polite"></div></div>
     <details class="mapa-desplegable" open><summary>¿Dónde encuentro estos datos en mi recibo?</summary>
       <figure class="recibo-real">
         <img src="recibo-cara1.webp" width="1155" height="1105" loading="lazy" alt="Recibo real de ESSA con los datos señalados: 1 días de consumo, 2 consumo en kWh, 3 valor del kWh, 4 valor total a pagar, A estrato, B generación, C consumo de meses anteriores, D número de cuenta, F lo que le ahorra el subsidio y G cobro adicional del plan. El nombre, el documento, la dirección, el número de cuenta y los códigos de barras están tapados.">
@@ -1029,8 +1030,8 @@ html, body { background: #fff; color: var(--texto); }
     <p>Con él le decimos <strong>por qué subió</strong>: si fue el precio, los días cobrados, su consumo o una deuda.</p>
     <div class="guia-botones"><button type="button" class="grande" data-ant="si">Sí, lo tengo</button><button type="button" class="grande secundario" data-ant="no">No lo tengo</button></div>
     <div id="gu-ant" hidden>
-      <div class="guia-pdf"><label class="boton secundario" for="ga-pdf"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg> Subir el recibo digital (PDF)</label><input id="ga-pdf" class="sr-solo" type="file" accept="application/pdf,.pdf"><span class="nota">O escriba los 4 datos. El PDF se lee en su celular y no se envía.</span><div id="ga-pdf-res" aria-live="polite"></div></div>
-      <details class="mapa-desplegable"><summary>¿Dónde están en el recibo anterior? Igual que en el nuevo</summary>
+      <div class="guia-pdf"><label class="boton secundario" for="ga-pdf"><svg class="ico" aria-hidden="true"><use href="#i-recibo"/></svg> Subir el recibo anterior digital (PDF)</label><input id="ga-pdf" class="sr-solo" type="file" accept="application/pdf,.pdf"><span class="nota">O escriba los 4 datos. El PDF se lee en su celular y no se envía.</span><div id="ga-pdf-res" aria-live="polite"></div></div>
+      <details class="mapa-desplegable"><summary>¿Dónde están en el recibo anterior? Igual que en el último</summary>
       <figure class="recibo-real">
         <img src="recibo-cara1.webp" width="1155" height="1105" loading="lazy" alt="Recibo real de ESSA con los datos señalados: 1 días de consumo, 2 consumo en kWh, 3 valor del kWh, 4 valor total a pagar, A estrato, B generación, C consumo de meses anteriores, D número de cuenta, F lo que le ahorra el subsidio y G cobro adicional del plan. El nombre, el documento, la dirección, el número de cuenta y los códigos de barras están tapados.">
         <figcaption>
@@ -1075,8 +1076,8 @@ html, body { background: #fff; color: var(--texto); }
 <section id="v-subio" class="vista" data-vista="subio" hidden>
   <div class="cabeza-seccion hero hero-recorte"><img class="hero-nitida" src="luz-justa-banner.webp" srcset="luz-justa-banner-1200.webp 1200w, luz-justa-banner.webp 2400w" sizes="(max-width: 640px) 100vw, 1168px" width="2400" height="888" alt="Luz Justa · Senadora Laura Ahumada"><div class="hero-txt"><h2>¿Por qué subió mi recibo?</h2><p>Le decimos cuánto es por el precio del kWh, los días cobrados, su consumo, el subsidio, el cobro del plan o deudas.</p></div></div>
   <section id="por-que-subio" class="paso-tarjeta" aria-labelledby="ps-titulo">
-    <div class="paso-cab"><svg class="ico-paso" aria-hidden="true"><use href="#i-pesos"/></svg><h3 id="ps-titulo">Compare su recibo anterior con el nuevo</h3></div>
-    <p>Tenga a la mano <strong>su recibo anterior y el nuevo</strong>. Copie de cada uno estos datos y le decimos cuánto de la subida es por el <strong>precio del kWh</strong>, por los <strong>días cobrados</strong>, por <strong>su consumo</strong>, por el <strong>subsidio</strong>, por el <strong>cobro del plan</strong> o por <strong>deudas</strong>. <svg class="ico-mini" aria-hidden="true"><use href="#i-candado"/></svg> Esto se calcula en su celular: no se envía ni se guarda.</p>
+    <div class="paso-cab"><svg class="ico-paso" aria-hidden="true"><use href="#i-pesos"/></svg><h3 id="ps-titulo">Compare su último recibo con el anterior</h3></div>
+    <p>Tenga a la mano <strong>su último recibo y el anterior</strong>. Copie de cada uno estos datos y le decimos cuánto de la subida es por el <strong>precio del kWh</strong>, por los <strong>días cobrados</strong>, por <strong>su consumo</strong>, por el <strong>subsidio</strong>, por el <strong>cobro del plan</strong> o por <strong>deudas</strong>. <svg class="ico-mini" aria-hidden="true"><use href="#i-candado"/></svg> Esto se calcula en su celular: no se envía ni se guarda.</p>
     <details class="mapa-desplegable"><summary>¿Dónde encuentro estos datos en mi recibo?</summary>
       <figure class="recibo-real">
         <img src="recibo-cara1.webp" width="1155" height="1105" loading="lazy" alt="Recibo real de ESSA con los datos señalados: 1 días de consumo, 2 consumo en kWh, 3 valor del kWh, 4 valor total a pagar, A estrato, B generación, C consumo de meses anteriores, D número de cuenta, F lo que le ahorra el subsidio y G cobro adicional del plan. El nombre, el documento, la dirección, el número de cuenta y los códigos de barras están tapados.">
@@ -1115,7 +1116,7 @@ html, body { background: #fff; color: var(--texto); }
         <div class="campo"><label for="pa-cobro">Cobro adicional CREG 101 120 <span class="opc">(opcional)</span></label><input id="pa-cobro" type="text" inputmode="numeric" placeholder="Si está en blanco, déjelo vacío"></div>
         
       </fieldset>
-      <fieldset class="grupo recibo-col"><legend><svg class="ico-mini" aria-hidden="true"><use href="#i-recibo"/></svg> Recibo nuevo</legend>
+      <fieldset class="grupo recibo-col"><legend><svg class="ico-mini" aria-hidden="true"><use href="#i-recibo"/></svg> Último recibo (el más reciente)</legend>
         <div class="campo"><label for="pb-dias">Días de consumo *</label><input id="pb-dias" type="number" inputmode="numeric" min="1" max="62" placeholder="Ej.: 30"></div>
         <div class="campo"><label for="pb-kwh">Consumo en kWh *</label><input id="pb-kwh" type="text" inputmode="decimal" placeholder="Ej.: 266"></div>
         <div class="campo"><label for="pb-cu">Valor del kWh (CUv) *</label><input id="pb-cu" type="text" inputmode="decimal" placeholder="Ej.: 944,07"></div>
@@ -2358,10 +2359,10 @@ function traerDatosRevisar() {
 const pesoKwh = (x) => '$' + fmtNum(x, 2);
 const FACTOR_TXT = {
   precio: (r) => [`El precio de cada kWh`, `Pasó de ${pesoKwh(r.anterior.cu)} a ${pesoKwh(r.actual.cu)} por kWh (${pct(r.pctPrecio)}). Lo calcula ESSA con la fórmula de la CREG: no depende de usted.${r.cambioG != null ? ` La Generación, lo que cuesta producir la energía, ${r.cambioG >= 0 ? 'subió' : 'bajó'} ${pesoKwh(Math.abs(r.cambioG))} por kWh${r.cambioG > r.cambioCu && r.cambioCu > 0 ? ': explica toda la subida, porque otros componentes bajaron' : ''}.` : ''}`],
-  dias: (r) => [`Los días cobrados`, r.actual.dias === r.anterior.dias ? `Los dos recibos cobran ${r.actual.dias} días.` : `Este recibo cobra ${r.actual.dias} días; el anterior, ${r.anterior.dias}. Más días es más energía cobrada, aunque usted gaste igual cada día.`],
+  dias: (r) => [`Los días cobrados`, r.actual.dias === r.anterior.dias ? `Los dos recibos cobran ${r.actual.dias} días.` : `Su último recibo cobra ${r.actual.dias} días; el anterior, ${r.anterior.dias}. Más días es más energía cobrada, aunque usted gaste igual cada día.`],
   consumo: (r) => [`Su consumo por día`, `Gastó ${fmtNum(r.kwhDiaActual, 1)} kWh por día; antes, ${fmtNum(r.kwhDiaAnterior, 1)} (${pct(r.pctConsumoDia)}).`],
   subsidio: (r) => [`El subsidio`, r.partes.subsidio < 0 ? `Su subsidio aumentó ${fmtPesos(-r.partes.subsidio)}: amortiguó parte de la subida.` : r.partes.subsidio > 0 ? `Su subsidio bajó ${fmtPesos(r.partes.subsidio)}.` : 'No cambió.'],
-  cobro: (r) => [`El cobro adicional del plan «Energía YA»`, r.partes.cobro > 0 ? `Este recibo trae ${fmtPesos(r.actual.cobro)} de cobro adicional por pasarse del 110 % de su meta.` : r.partes.cobro < 0 ? 'El recibo anterior tenía un cobro adicional mayor.' : 'No cambió.'],
+  cobro: (r) => [`El cobro adicional del plan «Energía YA»`, r.partes.cobro > 0 ? `Su último recibo trae ${fmtPesos(r.actual.cobro)} de cobro adicional por pasarse del 110 % de su meta.` : r.partes.cobro < 0 ? 'El recibo anterior tenía un cobro adicional mayor.' : 'No cambió.'],
   otros: () => [`Alumbrado público, aseo, intereses y otros`, 'En Barrancabermeja el alumbrado público se calcula como un porcentaje del valor de la energía: si sube la energía, sube también el alumbrado. El aseo lo cobra otra empresa.'],
 };
 // Detalle de la comparación: factores (del que más pesa al que menos) y avisos. Lo usan «¿Por qué subió?» y el camino guiado.
@@ -2383,10 +2384,10 @@ function detalleCambio(r, claves = clavesCambio(r)) {
     el('p', { class: 'nota' }, el('span', { class: 'etq estimacion' }, 'Cálculo propio'), 'Con los datos que escribió. La energía se calcula como kWh × valor del kWh; el cambio se reparte entre precio, días y consumo por día. «Otros» es lo que queda: alumbrado, aseo e intereses.')];
   const aviso = (...x) => nodos.push(el('div', { class: 'aviso' }, el('p', {}, ...x)));
   for (const a of r.avisos) {
-    if (a.clave === 'subsistencia') aviso(el('strong', {}, `El subsidio solo cubre los primeros ${CONSUMO_SUBSISTENCIA_KWH} kWh del mes. `), `Los otros ${fmtNum(a.kwhSinSubsidio, 0)} kWh de este recibo los paga a precio pleno: por eso, cuando sube el kWh, a su hogar le sube más (Res. UPME 355 de 2004).`);
+    if (a.clave === 'subsistencia') aviso(el('strong', {}, `El subsidio solo cubre los primeros ${CONSUMO_SUBSISTENCIA_KWH} kWh del mes. `), `Los otros ${fmtNum(a.kwhSinSubsidio, 0)} kWh de su último recibo los paga a precio pleno: por eso, cuando sube el kWh, a su hogar le sube más (Res. UPME 355 de 2004).`);
     if (a.clave === 'estimado') aviso(el('strong', {}, 'Le cobraron un consumo estimado o promedio, no la lectura de su medidor. '), 'Puede pedir que lo revisen y le cobren lo que marca el medidor (Ley 142 de 1994, art. 146). Un ciclo con consumo estimado no debería generar cobro adicional del plan (Res. CREG 101 120, art. 9).');
-    if (a.clave === 'deuda') aviso(el('strong', {}, `Este recibo trae ${fmtPesos(a.valor)} de recibos anteriores. `), 'No es un aumento de la luz, pero genera intereses y riesgo de corte. Puede pedir a ESSA un acuerdo de pago. El cobro adicional del plan, por sí solo, no puede causar corte.');
-    if (a.clave === 'dias_largos') aviso(el('strong', {}, `Este recibo cobra ${a.dias} días. `), 'El recibo cobra los días entre una lectura del medidor y la siguiente; un ciclo largo suele compensarse con uno más corto. Su meta del plan también se ajusta a los días del ciclo.');
+    if (a.clave === 'deuda') aviso(el('strong', {}, `Su último recibo trae ${fmtPesos(a.valor)} de recibos anteriores. `), 'No es un aumento de la luz, pero genera intereses y riesgo de corte. Puede pedir a ESSA un acuerdo de pago. El cobro adicional del plan, por sí solo, no puede causar corte.');
+    if (a.clave === 'dias_largos') aviso(el('strong', {}, `Su último recibo cobra ${a.dias} días. `), 'El recibo cobra los días entre una lectura del medidor y la siguiente; un ciclo largo suele compensarse con uno más corto. Su meta del plan también se ajusta a los días del ciclo.');
   }
   return nodos;
 }
@@ -2503,7 +2504,7 @@ async function alElegirPdfs(ev) {
     if (r.faltan.length) out.append(el('p', { class: 'no-cuadra' }, `Recibo ${k + 1}: no encontramos ${r.faltan.map((f) => ({ dias: 'los días', kwh: 'el consumo', cu: 'el valor del kWh', total: 'el total' }[f])).join(', ')}. Escríbalo a mano.`));
     for (const a of r.avisos) out.append(el('p', { class: 'nota' }, `Recibo ${k + 1}: ${a}`));
   }
-  if (leidos.length === 1) { ponerRecibo('pb', leidos[0]); if (leidos[0].estrato) $('#ps-estrato').value = leidos[0].estrato; out.append(el('p', {}, 'Lo pusimos como «Recibo nuevo». Suba también el anterior o escriba sus datos.')); return; }
+  if (leidos.length === 1) { ponerRecibo('pb', leidos[0]); if (leidos[0].estrato) $('#ps-estrato').value = leidos[0].estrato; out.append(el('p', {}, 'Lo pusimos como «Último recibo». Suba también el anterior o escriba sus datos.')); return; }
   const n = leidos.length;
   if (n === 3) {
     const sel = el('select', { id: 'ps-par' }, el('option', { value: '1-2' }, 'Recibo 2 → recibo 3 (los dos más recientes)'), el('option', { value: '0-2' }, 'Recibo 1 → recibo 3'), el('option', { value: '0-1' }, 'Recibo 1 → recibo 2'));
@@ -2657,7 +2658,7 @@ function resultadoGuia() {
     frases.push(cmp.cambioDeuda > 0 ? `Su recibo subió ${fmtPesos(cmp.cambioTotal)}, pero ${fmtPesos(cmp.cambioDeuda)} son de un recibo anterior sin pagar. Lo de este mes ${sube ? 'subió' : 'bajó'} ${fmtPesos(Math.abs(cmp.cambioMes))}.` : `Su recibo ${cmp.cambioTotal > 0 ? 'subió' : cmp.cambioTotal < 0 ? 'bajó' : 'quedó igual'}${cmp.cambioTotal ? ` ${fmtPesos(Math.abs(cmp.cambioTotal))} (${pct(cmp.pctTotal)})` : ''}.`);
     const top = ['precio', 'dias', 'consumo'].filter((k) => cmp.partes[k] > 0).sort((a, b) => cmp.partes[b] - cmp.partes[a])[0];
     if (top === 'precio') frases.push(`La causa principal es el precio: cada kWh le cuesta ${pesoKwh(cmp.cambioCu)} más que antes (${pct(cmp.pctPrecio)}). Eso no depende de usted.`);
-    if (top === 'dias') frases.push(`La causa principal es que este recibo cobra ${cmp.actual.dias} días y el anterior ${cmp.anterior.dias}. Aunque gaste igual cada día, más días cuestan más. No es un cobro de más: el recibo cobra los días entre una lectura del medidor y la siguiente, y ESSA cuenta el primero y el último. Como las lecturas no siempre caen el mismo día del mes, unos ciclos salen más largos y otros más cortos.`);
+    if (top === 'dias') frases.push(`La causa principal es que su último recibo cobra ${cmp.actual.dias} días y el anterior ${cmp.anterior.dias}. Aunque gaste igual cada día, más días cuestan más. No es un cobro de más: el recibo cobra los días entre una lectura del medidor y la siguiente, y ESSA cuenta el primero y el último. Como las lecturas no siempre caen el mismo día del mes, unos ciclos salen más largos y otros más cortos.`);
     if (top === 'consumo') frases.push(`La causa principal es que gastó más luz por día: ${fmtNum(cmp.kwhDiaActual, 1)} kWh diarios, antes ${fmtNum(cmp.kwhDiaAnterior, 1)}.`);
     if (sube && porDia > 0) { const eq = cmp.cambioMes / pesoDia(leerNumero(anterior.total, { min: 0, max: 2e8 }), 0, Number(anterior.dias)); frases.push(`Para darle una idea: lo que subió equivale a lo que antes pagaba por ${fmtNum(eq, 1)} ${Math.round(eq * 10) === 10 ? 'día' : 'días'} de luz.`); }
   }
